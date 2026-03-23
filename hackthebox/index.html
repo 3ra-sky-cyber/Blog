@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackTheBox | Cyber Era Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1333, #2a1f5f, #1a1333);
+            background-size: 400% 400%;
+            animation: kawaiiGradient 25s ease infinite;
+        }
+        @keyframes kawaiiGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        .neon-pink { text-shadow: 0 0 15px #ec4899, 0 0 30px #ec4899; }
+        .neon-cyan { text-shadow: 0 0 15px #67e8f9, 0 0 30px #67e8f9; }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.03);
+        }
+        .donut-ring {
+            position: absolute;
+            inset: -12px;
+            border: 6px solid #67e8f9;
+            border-radius: 9999px;
+            opacity: 0.6;
+            transition: all 0.4s;
+            animation: donutRotate 20s linear infinite paused;
+        }
+        .card-hover:hover .donut-ring {
+            animation-play-state: running;
+            opacity: 1;
+            box-shadow: 0 0 30px #67e8f9;
+        }
+        @keyframes donutRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-zinc-100">
+    <nav class="fixed top-0 left-0 right-0 bg-zinc-900/90 backdrop-blur-xl border-b border-zinc-800 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3">
+                <div>
+                    <span class="logo-font text-3xl font-bold tracking-tighter neon-pink">CYBER ERA</span>
+                    <span class="logo-font text-3xl font-bold tracking-tighter neon-white">LABS</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="../index.html" class="hover:text-pink-400 transition-colors">HOME</a>
+                <a href="./" class="text-pink-400 transition-colors">HACKTHEBOX</a>
+                <a href="../blueteam/" class="hover:text-pink-400 transition-colors">BLUE TEAM &amp; SHERLOCKS</a>
+                <a href="../threatintel/" class="hover:text-pink-400 transition-colors">THREAT INTEL</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="pt-28 pb-12 max-w-6xl mx-auto px-6">
+        <div class="flex justify-between items-center mb-10">
+            <h1 class="text-5xl font-bold logo-font neon-pink">HackTheBox Machines</h1>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10" id="cards">
+
+        </div>
+    </div>
+  
+</body>
+</html>
