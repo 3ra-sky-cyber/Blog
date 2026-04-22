@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Era Labs | Genesis Stealer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1333, #2a1f5f, #1a1333);
+            background-size: 400% 400%;
+            animation: kawaiiGradient 25s ease infinite;
+        }
+        @keyframes kawaiiGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        .neon-pink { text-shadow: 0 0 15px #ec4899, 0 0 30px #ec4899; }
+        .neon-cyan { text-shadow: 0 0 15px #67e8f9, 0 0 30px #67e8f9; }
+
+        .prose {
+            color: #f1f5f9;
+            max-width: 100%;
+        }
+        .prose p, .prose li, .prose td {
+            font-size: 1.3rem;
+            line-height: 1.95;
+            color: #f1f5f9;
+        }
+
+        /* Headings - only title has neon */
+        .prose h1 {
+            font-size: 3.2rem;
+            color: #f1f5f9;
+            font-weight: 700;
+            text-shadow: 0 0 30px #ec4899, 0 0 50px #ec4899;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+            color: #f1f5f9;
+            font-weight: 600;
+            text-shadow: none;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .prose h2 { font-size: 2.6rem; margin-top: 3rem; margin-bottom: 1rem; }
+        .prose h3 { font-size: 2.1rem; margin-top: 2.75rem; margin-bottom: 0.75rem; }
+        .prose h4, .prose h5, .prose h6 { font-size: 1.75rem; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+
+        .prose ul, .prose ol {
+            list-style: none;
+            padding-left: 0;
+        }
+        .prose ul li, .prose ol li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose ul li::before, .prose ol li::before {
+            content: "♦";
+            position: absolute;
+            left: 0;
+            color: #ec4899;
+            font-size: 1.4rem;
+        }
+        .prose ul ul, .prose ol ul,
+        .prose ul ol, .prose ol ol {
+            padding-left: 3rem;
+        }
+        .prose ul ul ul, .prose ol ul ul {
+            padding-left: 4rem;
+        }
+
+        .prose pre {
+            background: rgb(24 24 27 / 0.7);
+            padding: 1.75rem;
+            border-radius: 20px;
+            overflow-x: auto;
+            border: 1px solid #ec4899;
+            box-shadow: 0 0 25px -10px #ec4899;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .prose code {
+            font-family: ui-monospace, monospace;
+            color: #67e8f9;
+        }
+
+        .prose a {
+            color: #67e8f9;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .prose a:hover { color: #ec4899; }
+
+        .prose table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #2a1f2d;
+        }
+        .prose th, .prose td {
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid #f9a8d4;
+            color: #f4f4f5;
+        }
+        .prose th {
+            background: #ec4899;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .prose tr:nth-child(even) {
+            background: #3a2a3f;
+        }
+
+
+        .prose img {
+            max-width: 100%;
+            border-radius: 20px;
+            margin: 2.5rem 0;
+        }
+
+        .prose blockquote {
+            border-left: 6px solid #ec4899;
+            padding-left: 1.5rem;
+            color: #f1f5f9;
+            background: #27272a;
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem;
+        }
+    </style>
+</head>
+<body class="text-zinc-100 text-xl">
+    <nav class="fixed top-0 left-0 right-0 bg-zinc-900/90 backdrop-blur-xl border-b border-zinc-800 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3">
+                <div>
+                    <span class="logo-font text-3xl font-bold tracking-tighter neon-pink">CYBER ERA</span>
+                    <span class="logo-font text-3xl font-bold tracking-tighter neon-white">LABS</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="../index.html" class="hover:text-pink-400 transition-colors">HOME</a>
+                <a href="../hackthebox/" class="hover:text-pink-400 transition-colors">HACKTHEBOX</a>
+                <a href="../blueteam/" class="hover:text-pink-400 transition-colors">BLUE TEAM &amp; SHERLOCKS</a>
+                <a href="./" class="text-pink-400 transition-colors">THREAT INTEL</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 pt-28 pb-12">
+        <a href="./" class="text-pink-400 hover:text-pink-500 mb-8 inline-flex items-center gap-2 text-sm font-medium">
+            ← Back to Threat Intelligence Library
+        </a>
+       
+        <div class="flex items-center gap-4 text-xs text-zinc-400 mb-6">
+            <span class="px-4 py-1 bg-zinc-900/80 border border-pink-500 text-pink-400 text-xs font-mono tracking-widest px-8 py-3 rounded-3xl">Threat Intelligence</span>
+        </div>
+
+        <div class="prose">
+            <h1 class="text-5xl font-bold logo-font tracking-tighter neon-pink mb-6">Genesis Stealer</h1>
+            <h2>Website Analysis</h2>
+<p>A website currently being shared through Discord claims to offer a downloadable beta version of a game. However, further analysis reveals that the site contains heavily obfuscated JavaScript, a common technique used to hide malicious code. Instead of providing a legitimate game, the download installs malware known as “Geniesis Stealer,” an infostealer designed to extract sensitive data from the victim’s computer. This includes stored passwords, browser data, and other personal information. The code contains a lot of comments with suggest the use of AI.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316165004.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+
+<h3>Analysis on VirusTotal</h3>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316165130.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316165158.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<h3>Downloading the file</h3>
+<p>The download of the file is done through dropbox.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316165440.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316165532.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316165639.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>First after downloading the exe from the webpage we will need to extract is content with uniextract.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316193234.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>The malware is electron packed so we need to install electron and unpack it.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316194558.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<pre><code>PS C:\Blitzvoid\BlitzVoidLauncher Setup 2.1.1\Additional files\$PLUGINSDIR\app-64\resources&gt; asar extract .\app.asar .\app
+</code></pre>
+<p>Now to start the analysis of the extracted files we will open VS Code. VS Code is usefull when dealing with obfuscated JavaScript, as we can set breackpoints and use the debugger to see whats going on.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316195911.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>We can go https://deobfuscate.io/ and deobfuscate the JavaScript.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316200313.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>Now we have to see where we can find interesting values and where they are referenced.</p>
+<p>There is another big obfusctated string, so we need to type ctl+f to see where there is a function with this references.<br />
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316201032.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>After coping the new more readable script we can add breakpoints on the left if we see something interesting.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260316201202.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260324220935.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260324215958.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260324220537.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260324221556.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>After that, we can run the JavaScript debugger and see what variables we have that may be useful.</p>
+<p>More JavaScript.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260324224900.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>Genesis stealer in action</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260325002529.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>Discord and Steam WebHooks</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260325003728.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260421193618.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260421191937.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>Info of the machine.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260325002806.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>Browser info (passwords saved, cookies...).</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260325003007.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>In the other JavaScript we will see that it gathers a lot of other information about the machine like firewalls rules, antivirus installed and status. Discord, epicgames and steam information of our user, and other information.</p>
+<p>C2 domain.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260421185634.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>The domain in question seems to had other malware distinguished as games or cheat for games.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260421185752.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>Cloudflare R2</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260421192527.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260421191555.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<p>After retrieving all the information of the machine, and the info of the browsers it uploads all to a telegram group.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260421191433.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="Genesis Stealer"
+                   >
+                </div>
+<h2>IOCs</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0ECD12332F7EC115540C78F91BA34965A0836FE9A46B031C2BCF0F1E8B05706B</td>
+<td>Genesis Stealer Installer</td>
+<td>Hash</td>
+</tr>
+<tr>
+<td>EFC904CC388728431E47139C47E8D07FABD9CC66D62CA8EC11ED2D7D68951454</td>
+<td>Genesis Stealer Launcher</td>
+<td>Hash</td>
+</tr>
+<tr>
+<td>B0FC1E8B3A710EF1426B1A8171A754280828145839A1A017A5AFE0720F688809</td>
+<td>Genesis Stealer Packaged ASAR</td>
+<td>Hash</td>
+</tr>
+<tr>
+<td>uploads.kalygenesis.xyz</td>
+<td>C2</td>
+<td>Domain</td>
+</tr>
+</tbody>
+</table>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-zinc-700 text-xs text-zinc-400 flex justify-between font-medium">
+            <div>GenesisStealer • ThreatIntel</div>
+            <div>Written by CyberEra</div>
+        </div>
+    </div>
+
+    <footer class="bg-zinc-900/80 py-12 text-center text-zinc-400 text-sm">
+ 
+    </footer>
+
+
+</body>
+</html>
